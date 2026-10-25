@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-25",
+  "release": "0.2.0",
+  "decision": "Rename and distribution release; preserve prior runtime behavior. Experimental candidate-1 not adopted because frozen benefit gate was not met.",
+  "baseline_commit": "1c438b4d4436c079f61ecddd4304997b945c7e11",
+  "normalization": "Only name, version and H1 title differ from original runtime. Supporting references/template/license identical.",
+  "normalized_runtime_equal": true,
+  "release_manifest": {
+    "LICENSE": "8e51a3d1476cb7497704932e1511fc78c46c12ee900a121907ec178321cf7d28",
+    "SKILL.md": "567dea1703a23a650327930106ab2e5aec4e65d684da9fe85998fc14bf44d006",
+    "references/skill-forge-handoff.md": "933e13c91922d392a33c04f29a1ed030de18b0353215ee358b104a44908a2038",
+    "references/artifact-contracts.md": "49bc2b8a352d75cb4cf4216d7d661b469bb8caf234142b7ee16304b66c311b76",
+    "templates/brief.md": "5aec6b992f94dced5920e766583553c4e612c26ba3fd26917ddb23533b9dfce8"
+  },
+  "candidate_1_status": "retained privately, not active or installed",
+  "candidate_1_skill_sha256": "e24fdd9e855da02abc2dd6c77c6c0df0f5f50bcf7a18844dc1fec336006c18b1",
+  "independent_normalized_source_verification": true,
+  "tested_candidate_distinct_from_chosen_release": true,
+  "release_skill_sha256": "567dea1703a23a650327930106ab2e5aec4e65d684da9fe85998fc14bf44d006",
+  "evidence_note": "Behavior matrix separately tests original baseline and experimental candidate 1. Release retains baseline runtime exactly apart from name/title/version; independent normalized source comparison passed. No candidate1 benefit or adoption claimed."
+}

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-25",
+  "platform": "macOS arm64",
+  "python": "3.15.0",
+  "distribution_cases": 9,
+  "distribution_pass": true,
+  "format_validator": "canonical and compatibility alias pass",
+  "native_auto_discovery": "not tested",
+  "cross_model": "not tested",
+  "extracted_package_validator_exit": 0
+}

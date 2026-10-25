@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-25",
+  "prior_eval_files": 16,
+  "all_prior_eval_files_unchanged": true,
+  "old_zip_unchanged": true,
+  "old_name_occurrences": "Only compatibility paths, migration/rollback checks, historical evaluation/provenance and legacy archive remain. No accidental old name in canonical skill.",
+  "repository_rename": {
+    "id": 1424641180,
+    "from": "HarryBurd33/adaptive-prompt-builder",
+    "to": "HarryBurd33/prompt-forge",
+    "visibility": "public",
+    "old_name_resolves_to_same_id": true,
+    "base_commit": "1c438b4d4436c079f61ecddd4304997b945c7e11",
+    "main_protected": false,
+    "rulesets": []
+  },
+  "installed_copies_found": 0,
+  "installed_search_scope": [
+    "standard personal skill roots",
+    "current project skill roots",
+    "plugin cache",
+    "admin skill root",
+    "matching skill config entries"
+  ],
+  "personal_installation": "not performed"
+}

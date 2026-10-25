@@ -1,0 +1,24 @@
+{
+  "case": "D2-execution",
+  "condition": "baseline-generated prompt only",
+  "score": 2,
+  "critical_failure": false,
+  "observed_word_count": 120,
+  "checks": {
+    "exact120words": true,
+    "the fictional recipient": true,
+    "fixture_order_identifier": true,
+    "two_day_delay": true,
+    "fixture_refund_amount": true,
+    "no_external_save_claim": true,
+    "no_legal_admission": true,
+    "no_processed_refund_assertion": true,
+    "separate_subject": true
+  },
+  "observations": [
+    "Actual fresh execution produced email subject/body, honest not-saved status, supplied facts and no legal admission.",
+    "No recipient address was invented. Recipient attribute absent because the fictional recipient address unavailable.",
+    "Writing is somewhat stilted around refund uncertainty; frozen correctness checks pass, not a style superiority claim."
+  ],
+  "comparison": "Supplemental artifact coverage only; no matched candidate execution or behavioral benefit claim."
+}

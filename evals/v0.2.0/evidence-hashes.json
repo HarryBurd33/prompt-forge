@@ -1,0 +1,68 @@
+{
+  "baseline_repository_commit": "1c438b4d4436c079f61ecddd4304997b945c7e11",
+  "baseline_skill_files": {
+    "LICENSE": "8e51a3d1476cb7497704932e1511fc78c46c12ee900a121907ec178321cf7d28",
+    "SKILL.md": "15ad0aa8713027f6ba8d0f3c78c0c2630b4b857375db0d9e4056f3599eb78f71",
+    "references/artifact-contracts.md": "49bc2b8a352d75cb4cf4216d7d661b469bb8caf234142b7ee16304b66c311b76",
+    "references/skill-forge-handoff.md": "933e13c91922d392a33c04f29a1ed030de18b0353215ee358b104a44908a2038",
+    "templates/brief.md": "5aec6b992f94dced5920e766583553c4e612c26ba3fd26917ddb23533b9dfce8"
+  },
+  "candidate_1_skill_files": {
+    "LICENSE": "8e51a3d1476cb7497704932e1511fc78c46c12ee900a121907ec178321cf7d28",
+    "SKILL.md": "e24fdd9e855da02abc2dd6c77c6c0df0f5f50bcf7a18844dc1fec336006c18b1",
+    "references/artifact-contracts.md": "49bc2b8a352d75cb4cf4216d7d661b469bb8caf234142b7ee16304b66c311b76",
+    "references/skill-forge-handoff.md": "933e13c91922d392a33c04f29a1ed030de18b0353215ee358b104a44908a2038",
+    "templates/brief.md": "8fbece0a3d84e7bc7dce2f3ec5da29b3ae40dba3aff574dd7ae9986517210922"
+  },
+  "frozen_rules": {
+    "config.json": "742861f2400ffd23f65e673e4b695bb24deb1d87e9947a960549ce3b0ed35d7a",
+    "criteria.md": "2475fc43f530e8fce11060d122003e5a77c9e8b3e7aff21c1c3bb02930f80f29",
+    "development-inputs.json": "043e68595569dbc9f5e5af9ae16f62cdd4c49dc96fc8385bd939ba0e9e5f64e7",
+    "heldout.json": "ebc00015c61c814aaa710a7b0dc0c18fd675a3052680b9466abc600aaf6d146c"
+  },
+  "frozen_supplement": {
+    "supplemental-development-inputs.json": "086ce5a9ad6e014c0761c4a6a067e1d252aba99d97c8ac4e7f9ba3c491b22a9b",
+    "supplemental-criteria.md": "4ea01455ff842a87cda8f9a4b6f4d1a0bffe600e2368b6b8febc48a6a699d8ac"
+  },
+  "actual_artifact_hashes": {
+    "runs/baseline-D1-turn1.md": "c0a8d6f7d9a3b51d50b1be9d4664c24290fb00f9ced33a8a989652c864cccbf5",
+    "runs/baseline-D1-turn2.md": "86ca185bdf9339e7eb852286411edc3811a426659655646577643790b0554fdb",
+    "runs/baseline-D1-turn3.md": "947a65b91c742f251e008a68eef0658ba430c7967748026c5c2c5cbdd1db64e8",
+    "runs/baseline-D1-turn4.md": "0a113966d00064ac134e3d863e39d816ea14803c3593e5de129c7ac86b208299",
+    "runs/baseline-D2-executed.md": "29970b5501a8fc6d1b04e36e72a532ade2b51d7b4df9d855863c38c69cd20745",
+    "runs/baseline-D2-prompt.txt": "e5bbc12cdb02cefb2655688fa263275906d616dc3022305b9e7c31f93969e963",
+    "runs/baseline-D2-turn1.md": "5b4480e192f871dec074e44c21f77bb242c7eca96e594485dc7c1b739a291209",
+    "runs/baseline-D2-turn2.md": "efd1e936fdac270eccdef5244f67ddd11c30e47a1f3b4a943ec2bd2b642ae45d",
+    "runs/baseline-D3-turn1.md": "c827cb689bbb6b129de868cb34f7d8731c068ed71bc689004f20c778e1c2d947",
+    "runs/baseline-D4-turn1.md": "218fad4e48cf35c71d78860049d0273d61fd758b38b48c4be9d3b9f24d026f31",
+    "runs/baseline-D5-turn1.md": "03e4d8ca6f8c05c275d14a58a5df6c6d75b8e35b6809f823a287844ecbbd0c67",
+    "runs/baseline-H1-executed.md": "233d90c0bcb0d6ad555f0a7434380bd1fbe7db6b6af0edb308315890f47aa498",
+    "runs/baseline-H1-prompt.txt": "f637ce26a44518ddc2a2d86f68bf6e736a84fe3101b6d138c8b09ee2be52c201",
+    "runs/baseline-H1-turn1.md": "8a52b7b6d3f5a92a503a66a4f31af6a92e0f69916ff101f04240b84bd8cb6d8c",
+    "runs/baseline-L1-turn1.md": "8243ad053975b66e4f4f43ddb7a46de98477e7dee46a975c617d384336e69667",
+    "runs/baseline-L1-turn2.md": "0e2f1818dec8651a4d95cca9e624d94e8ef34f4e8a6f7b015ddfc173defc4fe3",
+    "runs/baseline-L1-turn3.md": "0d6847eae5dcc7e8636c6c100d34f24e698ad3dae02f22c16c80fc3539e1ed29",
+    "runs/baseline-L1-turn4.md": "9af979f301a7fec9eac2c1a115fa5be110225b1c2eba75f1f33486d13e505e04",
+    "runs/baseline-R1-turn1.md": "49586e805b46230e68a97482a5d5855738c22d40c3a368136482b7bc065d8782",
+    "runs/baseline-R2-turn1.md": "d1d3feb6f98e3a014805991d09527e5da7a190a10b6ea4833cf19868cb3e4e6d",
+    "runs/candidate-D1-turn1.md": "b027a2d6db0a5b28a4228320dd643edad469e9b77aabf8f3951d39246d0c58be",
+    "runs/candidate-D1-turn2.md": "b2db1dba2fae360150bc75604c91907905339b326a57023888708e2a102d7d5b",
+    "runs/candidate-D1-turn3.md": "b58e4a1e8ac2c6b81ec596823a3ef7783155ec2dbb580cff240809ecf9fe8962",
+    "runs/candidate-D1-turn4.md": "0ad2b85c2b2adb254fb4a843df6c28001d22e53b269339d8b609ebd169da7cd9",
+    "runs/candidate-D2-turn1.md": "2dc7e3db76e5cbf8d28b027c0096de485eaae02e312e48b846c978f814dc706f",
+    "runs/candidate-D2-turn2.md": "74f10cbc78423efe7ee43ac1184bea031faa4d16d61a94f58635dcf2f0fcbff1",
+    "runs/candidate-D3-turn1.md": "8845a16abc9ab8bdf9628cfedb1efd895c004c606437132d44b824483bc110aa",
+    "runs/candidate-D4-turn1.md": "ea99bae175ec11d1a7e166a5714b3ff0ae2fc1946729616761ca3613fe0e8cfd",
+    "runs/candidate-D5-turn1.md": "cb022ddc0e497ccc82562ce7e95f77eef4f1f55eda6a13288ef747f5bbfff1b4",
+    "runs/candidate-H1-executed.md": "e7abf422aa86aefe4af89302ae33cf789c5b265ebc1346d68af89cdb24d94df9",
+    "runs/candidate-H1-prompt.txt": "23bd5f59a849ac37477cf6e82a53b837660315afa6c5ec6701feac00f32110a9",
+    "runs/candidate-H1-turn1.md": "23bd5f59a849ac37477cf6e82a53b837660315afa6c5ec6701feac00f32110a9",
+    "runs/candidate-L1-turn1.md": "8bfbb10dc9559a6453261bd33294e4f5a6bb90cfcd36090a88a4d6aafc5a57ca",
+    "runs/candidate-L1-turn2.md": "01c0bd12d538655f6f6964dba23894c550bf930dde323b10f58e094ddda34849",
+    "runs/candidate-L1-turn3.md": "5ae99dba959371cbf03140539acdb3686a4a4b5259a2eaaa2a54f29815f68c0d",
+    "runs/candidate-L1-turn4.md": "773008855900846af77dc2da67bae225e81ac19783bc7c1d514c178966a3d806",
+    "runs/candidate-R1-turn1.md": "3bcec4919fe72fa85c292198b4ed4ef4a63620ba2170547774fc3e55547c9a5c",
+    "runs/candidate-R2-turn1.md": "d1d3feb6f98e3a014805991d09527e5da7a190a10b6ea4833cf19868cb3e4e6d"
+  },
+  "d2_execution_criteria_sha256": "83217e773e500e0628c047b78c8175be4720db921e15e5c89b81142040a59b14"
+}

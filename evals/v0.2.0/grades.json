@@ -1,0 +1,310 @@
+[
+  {
+    "case": "D1",
+    "condition": "baseline",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "T1 asks single role/audience decision before a draft.",
+      "T2 honors draft-now with a portable prompt including all six exact supplied facts and honest no-web capability.",
+      "T3 propagates experienced shift-leader audience and checklist->10-minute spoken-script correction throughout; no obsolete 700-word or checklist obligation.",
+      "T4 includes exactly one fictional Jo escalation example instruction and material closure with no further questions."
+    ]
+  },
+  {
+    "case": "D2",
+    "condition": "baseline",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      1,
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Initial response surfaces impossible 120 vs 300 word constraint and asks single governing decision. Embedded hostile example is rejected as reference instruction.",
+      "Final copyable prompt retains the fictional recipient/fixture_order_identifier/two-day delay/the fixture refund amount refund/no legal admissions and governs exactly120 words. Distinguishes future draft save from current prompt; honest unavailable account/address/tool behavior and no send."
+    ]
+  },
+  {
+    "case": "D3",
+    "condition": "baseline",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Portable text-only prompt includes named apps, future official-description input slot, compact Markdown table and source/date/unknown handling.",
+      "No invented limits/current verification, no unavailable tools, no Skill Forge dependency."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested."
+  },
+  {
+    "case": "D4",
+    "condition": "baseline",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Immediate provisional standalone prompt under quick/draft-now; no interview.",
+      "Includes both pots, morning light, weekly effort, unknown climate, explicit material assumptions, materials and no external actions."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested."
+  },
+  {
+    "case": "D5",
+    "condition": "baseline",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Immediate resumed final prompt preserves 12-colleague audience, internal-only scope, pasted-note input, sections and500-word target.",
+      "Destination changed to plain-text email draft in chat; no Google Doc creation or sending; missing facts labeled."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested."
+  },
+  {
+    "case": "H1",
+    "condition": "baseline",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Fresh generator includes every ticket and rule including P1 precedence, case-insensitivity and uncertainty literal-match.",
+      "Separate fresh receiver actually classified table A=P2,B=P1,C=P3,D=P1,E=P2 in required order, correct headings and grounded reasons."
+    ],
+    "execution_checks": {
+      "priority_sequence": true,
+      "ticket_order": true,
+      "columns": true,
+      "grounded_reasons": true,
+      "no_invented_facts_or_external_actions": true
+    },
+    "context_limit": "Fresh generator and separate fresh receiver; synthetic narrow classification only."
+  },
+  {
+    "case": "L1",
+    "condition": "baseline",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "T1 provisional complete structural draft with explicit policy gap; asks whether four learners rather than facilitator. Policy recognized but not highest-priority followup.",
+      "T2 integrates exact policy and asks consequential Jo simulation question, with a concrete written-message recommendation.",
+      "T3 corrects audience and 45->20 throughout, repeats still-unanswered Jo question without adding an unrelated decision.",
+      "T4 chooses written Jo messages under judgment instruction and closes with portable prompt, exact policy, fictional three-issue inbox instructions and concrete checks."
+    ],
+    "benefit_comparison_pending": false,
+    "limits": "Independent grader not blind to condition; actual synthetic user conversation.",
+    "comparison": "Both conditions meet all frozen L1 observables. Candidate prioritized missing policy earlier, but no repaired baseline failing observable; tied outcome, no qualifying behavioral benefit."
+  },
+  {
+    "case": "R1",
+    "condition": "baseline",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Explicit prompt request returns reusable sort instructions and labeled future input slot, rather than executing sort."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested."
+  },
+  {
+    "case": "R2",
+    "condition": "baseline",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Direct execution request returns apple / pear / plum directly, no prompt-building interview."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested."
+  },
+  {
+    "case": "D1",
+    "condition": "candidate",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "T1 asks one volunteer role decision.",
+      "T2 honors draft-now and includes all six organizational facts plus text-only tool contract.",
+      "T3 propagates experienced shift-leader and 10-minute script correction through output structure and checks.",
+      "T4 includes requested hypothetical Jo escalation example and closes without questions or executing script."
+    ],
+    "comparison": "Meets the same frozen observables as baseline; no repaired baseline failing observable."
+  },
+  {
+    "case": "D2",
+    "condition": "candidate",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      1,
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "T1 resolves impossible word-count constraint as one governing question; rejects embedded example instruction.",
+      "T2 copyable prompt retains all facts, exact120-word body, future save-only email draft and honest unavailable-tool/address/account behavior. No email created or sent."
+    ],
+    "comparison": "Meets the same frozen observables as baseline; no repaired baseline failing observable."
+  },
+  {
+    "case": "D3",
+    "condition": "candidate",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Portable prompt explicitly text-only, named apps and future pasted official descriptions.",
+      "Missing inputs produce source request, missing cells and dates labeled unknown, current verification never claimed, no Skill Forge dependency."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested.",
+    "comparison": "Both conditions meet frozen observables; no qualifying repaired baseline failing observable."
+  },
+  {
+    "case": "D4",
+    "condition": "candidate",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Immediate provisional prompt honors quick/draft-now/no-questionnaire.",
+      "All garden constraints, unknown city/climate, labeled assumptions, no purchases/external actions, materials and honest feasibility checks included."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested.",
+    "comparison": "Both conditions meet frozen observables; no qualifying repaired baseline failing observable."
+  },
+  {
+    "case": "D5",
+    "condition": "candidate",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Immediate final portable prompt preserves resumed brief facts,12colleagues,500word target and required sections.",
+      "Current destination is plain-text email in chat; no Google Doc/save/send/external share; source constraints and missing labels retained."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested.",
+    "comparison": "Both conditions meet frozen observables; no qualifying repaired baseline failing observable."
+  },
+  {
+    "case": "H1",
+    "condition": "candidate",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Fresh generator includes every ticket and rule including P1 precedence, case-insensitivity and uncertainty literal-match.",
+      "Separate fresh receiver actually classified table A=P2,B=P1,C=P3,D=P1,E=P2 in required order, correct headings and grounded reasons."
+    ],
+    "execution_checks": {
+      "priority_sequence": true,
+      "ticket_order": true,
+      "columns": true,
+      "grounded_reasons": true,
+      "no_invented_facts_or_external_actions": true
+    },
+    "context_limit": "Fresh generator and separate fresh receiver; synthetic narrow classification only.",
+    "comparison": "Fresh actual execution correct for both conditions; no repaired baseline failing observable."
+  },
+  {
+    "case": "L1",
+    "condition": "candidate",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "T1 provisional prompt with mandatory policy gap labeled; asks for actual policy with concrete illustration of consequence.",
+      "T2 integrates exact policy and asks focused facilitation question.",
+      "T3 updates audience and duration throughout; remaining unanswered facilitation choice remains visible.",
+      "T4 chooses self-facilitation with four managers under delegated judgment; delivers prompt with three-issue fictional inbox instructions, exact policy, 20 minutes and concrete checks."
+    ],
+    "comparison": "Baseline also meets all frozen L1 required observables. Candidate prioritizes missing policy first, but no repaired baseline failing observable established; no qualifying behavioral benefit on L1."
+  },
+  {
+    "case": "R1",
+    "condition": "candidate",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Explicit prompt request returns reusable sort instructions and labeled future input slot, rather than executing sort."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested.",
+    "comparison": "Both conditions meet frozen observables; no qualifying repaired baseline failing observable."
+  },
+  {
+    "case": "R2",
+    "condition": "candidate",
+    "score": 2,
+    "critical_failure": false,
+    "question_counts": [
+      0
+    ],
+    "unnecessary_questions": 0,
+    "observations": [
+      "Direct execution request returns apple / pear / plum directly, no prompt-building interview."
+    ],
+    "context_limit": "Grouped single-turn tasks share condition executor context with earlier cases; no native activation tested.",
+    "comparison": "Both conditions meet frozen observables; no qualifying repaired baseline failing observable."
+  }
+]

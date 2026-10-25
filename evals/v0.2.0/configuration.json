@@ -1,0 +1,18 @@
+{
+  "evaluation_id": "prompt-forge-upgrade-2026-10-25-v1",
+  "created": "2026-10-25",
+  "status": "frozen configuration; results reported separately",
+  "prior_frozen_evaluation": "Preserve version 0.1 config unchanged; this is a separate upgrade config.",
+  "model": "gpt-6.1-sol",
+  "effort": "medium (ordinary)",
+  "exact_model_revision": "unknown",
+  "host": "Codex desktop collaboration fresh model contexts",
+  "network": "disabled for these cases",
+  "time_budget_minutes": 30,
+  "max_candidates": 3,
+  "evaluator": "independent prompt_forge_evaluation agent",
+  "blinding": "Cases held private from candidate author; labels may be non-blind during artifact grading; disclose in report.",
+  "evidence": "Actual executor outputs only; authored examples are not passes. Fresh execution must run generated prompt in distinct context.",
+  "comparison": "Baseline and candidate identical inputs, tools, model and effort. Record mismatches. Benefit only if candidate improves a baseline failing observable; otherwise preserve regression verdict separately.",
+  "privacy": "Synthetic minimized case definitions may be published after runs finish. Private raw records remain outside repository."
+}

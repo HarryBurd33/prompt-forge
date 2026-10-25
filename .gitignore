@@ -2,3 +2,10 @@
 __pycache__/
 *.pyc
 .private/
+.env
+.env.*
+*.sqlite
+*.sqlite3
+*.db
+private-state/
+private-evaluations/

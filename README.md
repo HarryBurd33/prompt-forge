@@ -1,63 +1,86 @@
-# Adaptive Prompt Builder
+# Prompt Forge
 
-Turn a rough idea into a prompt another LLM can use. The skill asks focused questions, challenges assumptions, drafts a prompt, and refines it as feedback reveals gaps. It works across writing, research, planning, spreadsheets, software, and other workflows.
+Turn an idea into a standalone prompt another assistant can use in a fresh chat. Prompt Forge asks focused questions, challenges weak assumptions, makes drafts concrete, and follows up on consequential gaps until the brief is clear. It works across writing, research, planning, spreadsheets, software, GitHub work, and skill design.
 
-It produces a prompt first. It carries out the prompt only when you ask. When your goal is a reusable skill, it can prepare a self-contained prompt for **Skill Forge** to build it.
+**Prompt first; execution only when asked.** A Skill Forge handoff is an option when building a reusable skill. Prompt Forge works independently.
 
-## Install in Codex
+## Install
 
 Ask Codex:
 
-> Use $skill-installer to install the skill at skills/adaptive-prompt-builder from https://github.com/HarryBurd33/adaptive-prompt-builder.
-
-Download the [installable skill ZIP](dist/adaptive-prompt-builder-v0.1.0.zip) and extract it into your skill directory, or download this repository using **Code → Download ZIP**, then copy the complete `skills/adaptive-prompt-builder` folder into your personal `~/.agents/skills/` directory. For a project installation, place it inside that project's `.agents/skills/` directory. Keep the references and template alongside `SKILL.md`. If it does not appear in the skill selector, restart Codex.
-
-These locations follow the [current Codex skills documentation](https://learn.chatgpt.com/docs/build-skills). Installation was not performed on your computer by publishing this repository.
-
-## Start a prompt
-
 ```text
-Use $adaptive-prompt-builder to refine this idea into a reusable prompt:
-[describe your rough idea]. Ask focused questions and challenge weak assumptions.
+Use $skill-installer to install skills/prompt-forge from
+https://github.com/HarryBurd33/prompt-forge.
 ```
 
-For a skill you want Skill Forge to build:
+Or extract [the complete skill ZIP](dist/prompt-forge-v0.2.0.zip) into `~/.agents/skills/`. The resulting path should be `~/.agents/skills/prompt-forge/SKILL.md`, with its references and template alongside it. For a project installation, use the project's `.agents/skills/` directory. These paths follow the [official OpenAI skills documentation](https://learn.chatgpt.com/docs/build-skills). If the skill does not appear, restart the host.
 
-```text
-Use $adaptive-prompt-builder to refine my idea for a checkpoint skill that saves
-unfinished work before usage runs out. Produce a standalone prompt I can give
-to Skill Forge. Help clarify which usage limit matters and what can activate
-automatically; do not build the checkpoint skill yet.
+From a cloned repository, the safe install helper is:
+
+```sh
+python3 scripts/install.py --root ~/.agents/skills
 ```
 
-Answer the questions and react to drafts. Then copy the finished prompt into a chat where Skill Forge is available. You can also say: `Now use Skill Forge to carry out the finalized prompt.`
+Upgrading Adaptive Prompt Builder? Use `--migrate` and read [migration and rollback](docs/MIGRATION.md). Customized copies are preserved for a manual merge. The repository was renamed in place, preserving history and public visibility. `prompt-forge` is the canonical package, directory, and invocation name; the old name remains a generated standalone compatibility alias. Install one name, not both.
 
-## Control the depth
+## Use it
+
+```text
+Use $prompt-forge to refine this idea into a reusable prompt:
+[your rough idea]. Ask focused questions, challenge weak assumptions,
+and clarify the intended outcome, artifact format, and destination.
+```
+
+For example:
+
+```text
+Use $prompt-forge to refine a prompt for turning messy meeting notes into
+an action tracker. Help me decide whether I need a document, an Excel
+workbook, or GitHub issues. Produce the prompt first.
+```
+
+For Skill Forge:
+
+```text
+Use $prompt-forge to refine my checkpoint-skill idea into a standalone
+prompt for Skill Forge. Clarify which usage signal is observable,
+what can trigger saving, what must be preserved, and how resumption
+will be verified. Do not build the checkpoint skill yet.
+```
+
+Respond to each focused question and react to the draft. When a material gap remains, Prompt Forge should initiate a concrete follow-up, revise the prompt from your answer, and check again. A complete request can finish immediately; there is no fixed question count or required approval ceremony.
 
 | Say | Effect |
-|---|---|
+| --- | --- |
 | `Quick` | Resolve blockers and draft sooner. |
-| `Thorough` | Explore material requirements and failure cases. |
-| `Expert challenge` | Stress assumptions and compare alternatives. |
-| `Draft now` | Get a provisional prompt with assumptions labeled. |
+| `Thorough` | Explore material branches and failure cases. |
+| `Expert challenge` | Stress assumptions with examples and alternatives. |
+| `Draft now` | Stop questions for this turn; give a provisional prompt with assumptions. |
+| `Skip` / `Use your judgment` | Label an assumption or delegate routine choices. |
 | `Go deeper` | Explore a consequential uncertainty. |
-| `Skip` or `Use your judgment` | Record an assumption or delegate routine choices. |
-| `Actually, make the output an Excel workbook` | Revise the artifact and dependent requirements while retaining settled answers. |
-| `Save a brief` / `Resume from this brief` | Preserve or restore decisions when files or supplied text are available. |
-| `Now carry it out` | Execute the completed prompt within available tools and authorization. |
+| `Actually, make the output an Excel workbook` | Update the prompt, examples, and checks; retain unaffected decisions. |
+| `Save a brief` / `Resume from this brief` | Preserve or restore the latest draft, decisions, gaps, and next action. |
+| `Finalize` / `Prompt only` | End the interview with remaining limitations made explicit. |
+| `Now carry it out` | Execute the prompt within the available tools and authorization. |
 
-The skill adapts its depth by default. It can deliver immediately when a prompt request is already complete. It keeps refining while an answer could materially change the result, without forcing an endless interview.
+A direct task such as “sort these names” should be performed directly. The skill should not turn it into an interview unless you request prompt refinement.
 
-## Use in other LLMs
+## Other hosts and limitations
 
-Paste or upload [the portable prompt](portable/adaptive-prompt-builder.md), then describe your idea. It contains the core instructions and supporting guidance. Other hosts that load standard Agent Skills can use the skill folder with their own installation procedure. No scripts, paid APIs, or Skill Forge installation are needed for prompt building; Skill Forge is needed only when you choose that handoff.
+Paste [the portable instructions](portable/prompt-forge.md) into another LLM, then describe your idea. The file includes the supporting guidance. Hosts supporting Agent Skills may load the complete skill folder using their own setup procedure. Prompt building has no script, paid API, or Skill Forge dependency.
 
-Files, browsing, external apps, persistence, and independent testing depend on the host. A prompt cannot supply missing tools or guarantee automatic activation of a future skill. Publishing or editing an external artifact requires appropriate authorization. Cross-host behavior and automatic discovery are not guaranteed.
+Available tools determine whether a recipient can browse, create files, edit a cloud document, or publish to GitHub. A prompt cannot add those tools, guarantee automatic activation, or recover a brief that was never saved. Unknown inputs and tool limits should be explicit. Private interview state is separate from distributable skill files.
 
-## Evidence and development
+## Validation and maintenance
 
-See [validation](docs/VALIDATION.md) for executed checks and limitations, and [foundations](docs/FOUNDATIONS.md) for source provenance. Evaluations use synthetic inputs. Baseline source snapshots, full response logs, and private interview state remain local; the repository includes synthetic test definitions and summarized validation evidence.
+See the [requirements-to-evidence checklist](docs/REQUIREMENTS.md), [v0.2.0 validation](docs/VALIDATION-v0.2.0.md), [handoff](HANDOFF.md), and [foundations](docs/FOUNDATIONS.md). [v0.1.0 validation](docs/VALIDATION.md) and frozen evaluation records remain historical evidence, not claims about this release.
 
-`python3 scripts/package.py` (Python 3.9+) rebuilds the portable prompt and installable ZIP; `python3 scripts/package.py --check` checks for drift, local links, and package integrity. Python is needed only for maintaining packages, not for using the skill.
+Maintenance uses Python 3.9+ and the standard library:
 
-MIT licensed. The skill adapts the MIT-licensed Skill Forge example; its copyright and permission notice are retained in [LICENSE](LICENSE).
+```sh
+python3 scripts/package.py
+python3 scripts/package.py --check
+python3 -m unittest discover -s tests -v
+```
+
+The canonical instructions generate the compatibility copy, both portable files, ZIP, and checksums. [AGENTS.md](AGENTS.md) preserves the usage-saving and independent-evaluation policy. MIT licensed; the adapted Skill Forge example's notices remain in [LICENSE](LICENSE).

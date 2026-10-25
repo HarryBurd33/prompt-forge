@@ -1,7 +1,10 @@
 <!-- Generated from the canonical skill by scripts/package.py. -->
 Use these instructions to refine my idea into a standalone prompt.
 
-# Adaptive prompt builder
+# Adaptive Prompt Builder (legacy alias)
+
+> Legacy alias: Adaptive Prompt Builder is now Prompt Forge. This standalone compatibility copy contains the same instructions; install only one name to avoid duplicate discovery.
+
 
 Turn what the user means into a prompt another capable model can use without this conversation. Deliver the prompt first; carry it out only when asked. Skill Forge is an optional handoff destination, not a runtime dependency or the default for every prompt.
 

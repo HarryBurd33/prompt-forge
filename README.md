@@ -4,6 +4,18 @@ Turn an idea into a standalone prompt another assistant can use in a fresh chat.
 
 **Prompt first; execution only when asked.** v0.3.0 adds selective recommendations, a concrete “deeper, not bigger” diagnosis, outcome routing to Skill Forge or Agent Forge, and optional Task Checkpoint / Model Switcher awareness. A copyable reusable prompt stays an ordinary prompt; companion skills remain optional.
 
+## Research and real files
+
+For research, ask:
+
+> Use $prompt-forge to refine a research brief for [question]. Set the source scope, date range, evidence standards, exclusions, and final format. Produce a standalone prompt for my chosen research-capable assistant; do not research yet.
+
+Copy the prompt into a host with verified research tools, then explicitly ask that host to execute it. If a Deep Research skill or product mode is available there, select it using that host's supported control; Prompt Forge does not install or activate an unavailable mode. Return findings for targeted refinement when useful. A no-browsing host must identify missing source access.
+
+For real files, specify the file rather than just the application: “an .xlsx workbook with named sheets and formulas” or “a one-page .docx memo.” Prompt Forge prepares the prompt; the receiving host supplies authoring, recalculation and rendering tools. See the actually generated [workbook](examples/workbook-prompt.md), [document](examples/document-prompt.md) and [research](examples/research-prompt.md) prompts.
+
+The [capability audit and fresh-receiver tests](docs/CAPABILITY-AUDIT-2026-11-08.md) verify these bounded workflows. The v0.3.0 runtime is unchanged; the supplement does not replace historical evaluation results.
+
 ## Install
 
 Ask Codex:

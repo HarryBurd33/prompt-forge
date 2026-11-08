@@ -1,5 +1,7 @@
 # Requirements and evidence
 
+The [2026-11-08 capability audit](CAPABILITY-AUDIT-2026-11-08.md) adds actual fresh-receiver DOCX/XLSX/research coverage and a no-browsing control with unchanged v0.3.0 runtime. Historical rows retain their original scope and dates.
+
 ## v0.3.0 upgrade — 2026-11-08
 
 Current evidence is in [v0.3.0 validation](VALIDATION-v0.3.0.md). Earlier rows below are preserved historical release claims.

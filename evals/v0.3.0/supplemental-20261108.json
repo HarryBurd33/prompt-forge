@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-08",
+  "runtime_version": "0.3.0",
+  "runtime_changed": false,
+  "source_commit_before_supplement": "ed5f890708a06fb717d75e16ab916d005b7e90ba",
+  "configured_model": "gpt-6.1-sol",
+  "effort": "medium",
+  "exact_serving_revision": null,
+  "cases": [
+    {
+      "id": "xlsx",
+      "prompt_sha256": "9be7d7c7cb134cbe519d1418f0b9fdaa900318dc736ecbccf9fa3759a528942a",
+      "generation_exit": 0,
+      "generation_elapsed_seconds": 22.061,
+      "receiving_execution": "PASS",
+      "independent_review": "PASS"
+    },
+    {
+      "id": "docx",
+      "prompt_sha256": "6daa0e5db3c529c5dc119e71614325edd404026eb6367e02c3138464f0ee6cfb",
+      "generation_exit": 0,
+      "generation_elapsed_seconds": 19.709,
+      "receiving_execution": "PASS",
+      "independent_review": "PASS"
+    },
+    {
+      "id": "research",
+      "prompt_sha256": "db122e8f1493884c8480fbb9ec9810c1f809752ae501d319731a1a69a69c7a0a",
+      "generation_exit": 0,
+      "generation_elapsed_seconds": 22.276,
+      "receiving_execution": "PASS",
+      "independent_review": "PASS"
+    }
+  ],
+  "no_browsing_control": "PASS",
+  "artifact_hashes": {
+    "xlsx": "8d5943e8f44400e3f705aeba5581485e90f87a0d3a0602fba26db67dd0b0621d",
+    "docx": "6bcc93e2152b492bb3e313c2aec4c235135925557ab7a94a95caf749be0548b5"
+  },
+  "limits": [
+    "single synthetic sample per workflow",
+    "no runtime comparison or general quality claim",
+    "native Excel/Word/cloud applications not tested",
+    "complete production access capture not established"
+  ]
+}

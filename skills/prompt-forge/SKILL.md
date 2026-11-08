@@ -1,14 +1,18 @@
 ---
 name: prompt-forge
-description: Refine ideas or existing prompts through focused questions, constructive challenges, drafts, and feedback. Produce a standalone prompt or an explicit Skill Forge handoff; do not turn ordinary execution tasks into interviews.
+description: Refine ideas or existing prompts through focused questions, constructive challenges, drafts, and feedback. Produce a standalone prompt, Skill Forge package handoff or Agent Forge agent handoff. Recommend refinement selectively for material uncertainty; do not turn clear execution into interviews.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Prompt Forge
 
-Turn what the user means into a prompt another capable model can use without this conversation. Deliver the prompt first; carry it out only when asked. Skill Forge is an optional handoff destination, not a runtime dependency or the default for every prompt.
+Turn what the user means into a prompt another capable model can use without this conversation. Deliver the prompt first; carry it out only when asked. Route by intended outcome: an ordinary prompt, a Skill Forge package, or an Agent Forge executable agent. Builders and companion skills are optional, not runtime dependencies.
+
+## Recommend selectively
+
+For a substantive new idea or existing-project change, recommend Prompt Forge briefly only when a material unknown about outcome, scope, constraints or deliverable makes refinement useful. Name that uncertainty and benefit in one sentence, at most once per unresolved task. A recommendation is not acceptance or an interview. Honor a decline; continue authorized work without repeating the suggestion unless the user reopens refinement or materially changes the task. Clear execution requests, trivial edits and ongoing work with settled requirements proceed directly; substantial size alone does not justify an interview. Resolve only genuinely blocking uncertainty. Metadata alone does not establish host-wide discovery; the repository provides an optional managed recommendation rule.
 
 ## Establish the task
 
@@ -24,22 +28,35 @@ Use the answer to update the brief, then test the weakest material assumption wi
 
 Unpack ambiguous shorthand when its meaning changes the design. For example, “usage” could mean account quota, context capacity, or an explicit token/cost budget; ask which applies instead of treating these as interchangeable.
 
-For a vague answer, seek an example that clarifies the current decision. For a consequential contradiction, name the conflict and resolve which requirement governs; do not silently choose. After corrections, revisit dependent decisions and remove obsolete requirements from the brief, prompt, examples, and checks. Preserve unaffected answers.
+For a vague answer, seek an example that clarifies the current decision. A clear latest correction replaces the old value. For unresolved simultaneous contradictory requirements, name the conflict and ask one consequential choice; do not silently choose. After corrections, revisit dependent decisions and remove obsolete requirements from the brief, prompt, examples, and checks. Preserve unaffected answers.
 
 Match depth to unresolved decisions and consequences. **Quick** addresses blockers; **thorough** explores material branches and failure cases; **expert challenge** stresses assumptions and alternatives. By default, adapt depth rather than imposing a fixed question count. Respect these controls:
 
-- **Draft now:** stop interviewing and provide a provisional prompt with explicit assumptions and open blockers.
+- **Draft now:** stop interviewing and immediately provide a provisional standalone prompt with explicit assumptions and open blockers; do not append a question.
 - **Skip / use your judgment:** record an assumption or choose a routine default; do not invent user facts or authorization.
 - **Go deeper:** explore the most consequential remaining uncertainty.
 - **Resume:** use the available brief and latest corrections, asking only about unresolved or changed matters. If state is unavailable, say so and request the smallest useful handoff.
 
 Move to a draft when outcome, inputs, material constraints, artifact requirements, and success checks are concrete enough, or the user requests it. Do not stop refining merely because a plausible prompt exists: use feedback and examples to expose consequential gaps. Equally, do not keep questioning after material clarity or demand a final approval ceremony. Offer further refinement without making it mandatory.
 
+## Deeper, not bigger
+
+When requested, or when substantive refinement needs it, give a compact four-part diagnosis before the rewritten prompt:
+
+1. What concrete action would an excellent practitioner add that the request omits?
+2. What least-processed source material would they start from (for example, original failing inputs, logs, code, documents or corrections)?
+3. Which specific methods and tools would they use to resolve the uncertainty?
+4. What independent evidence would show the result is right (for example, a source oracle, reproduced failure and regression, recipient test, or separate reviewer)?
+
+Four short clauses can suffice. Translate useful findings into concrete requested actions and observable checks in the prompt. Tie each addition to the existing outcome; deeper means better evidence and decisions, not extra deliverables, broad research or new features. Distinguish sources supplied or reported available from sources actually inspected, missing inputs from facts, and proposed tools from verified capabilities. Ask for concise rationale and observable artifacts, never hidden reasoning. Small or settled prompts need no ceremony.
+
 ## Draft and check
 
 Build the prompt around the outcome, necessary context, input contract, essential constraints, artifact/format/destination, available capabilities, missing-information behavior, and observable completion checks. Add examples only when they improve execution. Resolve or label placeholders; never rely on “as discussed above.” Keep uncertain facts and proposed defaults visibly distinct from confirmed requirements. Prefer concise instructions over decorative roles, repeated rules, or an exhaustive checklist.
 
-When artifact details affect usability, read [artifact contracts](references/artifact-contracts.md). For a requested Skill Forge handoff, read [Skill Forge handoff](references/skill-forge-handoff.md). Carry relevant settled decisions into that handoff; ask the receiving builder to refine only genuinely unresolved choices.
+When artifact details affect usability, read [artifact contracts](references/artifact-contracts.md). Route by outcome using [routing and companions](references/routing-and-companions.md): a one-off task or copyable reusable prompt stays an ordinary prompt; an installable reusable workflow package goes to Skill Forge; an executable task agent goes to Agent Forge. For Skill Forge, also read [Skill Forge handoff](references/skill-forge-handoff.md). Carry one shared brief and settled answers into mixed handoffs, with the primary deliverable first. Ask one consequential question only if its answer changes the route. Preparing a build prompt does not authorize building; preserve existing explicit build authorization.
+
+For substantial work or handoff risk, inspect the loaded catalog and matching current instructions for Task Checkpoint and Model Switcher; use the linked companion guidance. Reuse standing preferences and matching task ownership. Their absence must leave a usable prompt; never invent installation, quota telemetry, switching, saved state or automatic continuation.
 
 Review whether a fresh receiving model has the context, inputs, tools, permissions, and success criteria needed. If the user wants a test, or a small safe test materially helps an authorized task, run it only with available capabilities and within scope. Distinguish actual execution from static review and illustrations; do not create external artifacts merely to test a prompt. If execution is requested, apply the completed prompt to the supplied inputs and verify the actual output using relevant host capabilities.
 

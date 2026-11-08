@@ -2,7 +2,7 @@
 
 Turn an idea into a standalone prompt another assistant can use in a fresh chat. Prompt Forge asks focused questions, challenges weak assumptions, makes drafts concrete, and follows up on consequential gaps until the brief is clear. It works across writing, research, planning, spreadsheets, software, GitHub work, and skill design.
 
-**Prompt first; execution only when asked.** A Skill Forge handoff is an option when building a reusable skill. Prompt Forge works independently.
+**Prompt first; execution only when asked.** v0.3.0 adds selective recommendations, a concrete “deeper, not bigger” diagnosis, outcome routing to Skill Forge or Agent Forge, and optional Task Checkpoint / Model Switcher awareness. A copyable reusable prompt stays an ordinary prompt; companion skills remain optional.
 
 ## Install
 
@@ -13,7 +13,7 @@ Use $skill-installer to install skills/prompt-forge from
 https://github.com/HarryBurd33/prompt-forge.
 ```
 
-Or extract [the complete skill ZIP](dist/prompt-forge-v0.2.0.zip) into `~/.agents/skills/`. The resulting path should be `~/.agents/skills/prompt-forge/SKILL.md`, with its references and template alongside it. For a project installation, use the project's `.agents/skills/` directory. These paths follow the [official OpenAI skills documentation](https://learn.chatgpt.com/docs/build-skills). If the skill does not appear, restart the host.
+Or extract [the complete skill ZIP](dist/prompt-forge-v0.3.0.zip) into `~/.agents/skills/`. The resulting path should be `~/.agents/skills/prompt-forge/SKILL.md`, with its references and template alongside it. For a project installation, use the project's `.agents/skills/` directory. These paths follow the [official OpenAI skills documentation](https://learn.chatgpt.com/docs/build-skills). If the skill does not appear, restart the host.
 
 From a cloned repository, the safe install helper is:
 
@@ -21,7 +21,20 @@ From a cloned repository, the safe install helper is:
 python3 scripts/install.py --root ~/.agents/skills
 ```
 
+Upgrading an unchanged Prompt Forge v0.2.0 in its existing root? Run `python3 scripts/install.py --root ~/.codex/skills --upgrade` (adjust the root to the actual installation). The helper verifies exact known hashes, backs up outside discovery, and refuses customizations.
+
 Upgrading Adaptive Prompt Builder? Use `--migrate` and read [migration and rollback](docs/MIGRATION.md). Customized copies are preserved for a manual merge. The repository was renamed in place, preserving history and public visibility. `prompt-forge` is the canonical package, directory, and invocation name; the old name remains a generated standalone compatibility alias. Install one name, not both.
+
+## Optional Codex recommendation rule
+
+Skill metadata does not prove universal activation. To add a small recommendation rule to Codex's effective global instructions, after installing the skill:
+
+```sh
+python3 scripts/recommendation_rule.py install --codex-home ~/.codex --skill-path ~/.codex/skills/prompt-forge
+python3 scripts/recommendation_rule.py remove --codex-home ~/.codex
+```
+
+The helper selects nonempty `AGENTS.override.md` before `AGENTS.md`, preserves unrelated bytes, records private ownership and refuses duplicate, malformed or customized blocks. It renders `{{SKILL_PATH}}` in the bundled template to the installed `SKILL.md`. The rule recommends refinement once for material uncertainty, honors declines and explicit execution, and skips settled work. It does not launch an interview automatically. Inspect the host's effective instructions and test a fresh chat; project instructions and user requests can still govern. See [migration and rollback](docs/MIGRATION.md) for removal and limits.
 
 ## Use it
 
@@ -48,6 +61,21 @@ what can trigger saving, what must be preserved, and how resumption
 will be verified. Do not build the checkpoint skill yet.
 ```
 
+For an executable agent:
+
+```text
+Use $prompt-forge to refine a build prompt for Agent Forge: a manually
+invoked inventory-reconciliation agent with a playbook, toolbox, bounded
+retries and recovery. Produce the prompt first; do not build it yet.
+```
+
+For a focused improvement:
+
+```text
+Use $prompt-forge. Deeper, not bigger: investigate stale dashboard counts
+using raw logs and code. Preserve the existing scope. Draft now.
+```
+
 Respond to each focused question and react to the draft. When a material gap remains, Prompt Forge should initiate a concrete follow-up, revise the prompt from your answer, and check again. A complete request can finish immediately; there is no fixed question count or required approval ceremony.
 
 | Say | Effect |
@@ -57,7 +85,7 @@ Respond to each focused question and react to the draft. When a material gap rem
 | `Expert challenge` | Stress assumptions with examples and alternatives. |
 | `Draft now` | Stop questions for this turn; give a provisional prompt with assumptions. |
 | `Skip` / `Use your judgment` | Label an assumption or delegate routine choices. |
-| `Go deeper` | Explore a consequential uncertainty. |
+| `Go deeper` / `Deeper, not bigger` | Name the omitted practitioner action, raw material, method/tool and independent evidence; turn useful findings into prompt actions without expanding scope. |
 | `Actually, make the output an Excel workbook` | Update the prompt, examples, and checks; retain unaffected decisions. |
 | `Save a brief` / `Resume from this brief` | Preserve or restore the latest draft, decisions, gaps, and next action. |
 | `Finalize` / `Prompt only` | End the interview with remaining limitations made explicit. |
@@ -72,6 +100,8 @@ Paste [the portable instructions](portable/prompt-forge.md) into another LLM, th
 Available tools determine whether a recipient can browse, create files, edit a cloud document, or publish to GitHub. A prompt cannot add those tools, guarantee automatic activation, or recover a brief that was never saved. Unknown inputs and tool limits should be explicit. Private interview state is separate from distributable skill files.
 
 ## Validation and maintenance
+
+v0.3.0 passed 19 matched behavioral cases (including four corrected fixture pairs), independent review, 22 filesystem tests and fresh native installation checks. See [v0.3.0 validation and limits](docs/VALIDATION-v0.3.0.md) and [foundations](docs/FOUNDATIONS-v0.3.0.md). Earlier reports below remain historical.
 
 See the [requirements-to-evidence checklist](docs/REQUIREMENTS.md), [v0.2.0 validation](docs/VALIDATION-v0.2.0.md), [handoff](HANDOFF.md), and [foundations](docs/FOUNDATIONS.md). [v0.1.0 validation](docs/VALIDATION.md) and frozen evaluation records remain historical evidence, not claims about this release.
 

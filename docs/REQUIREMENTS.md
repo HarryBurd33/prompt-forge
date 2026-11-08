@@ -1,5 +1,22 @@
 # Requirements and evidence
 
+## v0.3.0 upgrade — 2026-11-08
+
+Current evidence is in [v0.3.0 validation](VALIDATION-v0.3.0.md). Earlier rows below are preserved historical release claims.
+
+| Requirement | Implementation | Observed evidence / boundary |
+|---|---|---|
+| Recommend selectively for new ideas and project changes | Metadata, runtime recommendation rule and managed global block | D01/D08/D15/H01 plus actual global-rule smoke; clear D02 and settled D14 proceed directly. Not universal host activation. |
+| Deeper, not bigger | Four-part practitioner/source/method/independent-check diagnosis | D03/H03; concrete source oracle and replay, no new dashboard features. |
+| Prompt, skill, agent and mixed routes | Directly linked routing reference and one shared brief | D04-D07; corrected D06 ties baseline, mixed D07 improves named handoff. Prompt-only never launches a builder. |
+| Preserve pace, corrections and artifact contracts | Existing controls and artifact reference retained; latest correction clarified | D09/D11-D13 and held-out controls; exact corrected headers and missing-value handling. |
+| Optional companions and current preferences | Catalog/current-contract inspection, state/ownership reuse and manual fallback | Corrected D09/D10/H04 and D12; no real quota trigger, helper execution or automatic switch tested. |
+| Safe upgrade, managed rule and rollback | Exact-base hash check, outside-discovery backup, owned block and pending receipt | 22 deterministic tests, installed seven-file parity, unchanged unrelated global bytes and prior-tree backup. |
+| Real installation and native discovery | Existing installation updated; no competing personal copy | Four fresh CLI checks; actual catalog reports one entry and tool-read version0.3.0. |
+| Independent improvement and publication | Frozen paired criteria, hidden cases, separate review, existing repository | Combined106/106 versus92/106; sanitized report only. Verified publication commit is recorded in HANDOFF.md. |
+
+## Historical v0.2.0 audit
+
 Audit date: 2026-10-25. “Observed” means a recorded execution, not a guarantee across models or tasks. See the independent [upgrade evaluation](../evals/v0.2.0/REPORT.md) and [release validation](VALIDATION-v0.2.0.md) for the release decision.
 
 | Requested capability | Implementation | Evidence and limits |

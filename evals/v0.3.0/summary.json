@@ -1,0 +1,189 @@
+{
+  "version": "0.3.0",
+  "date": "2026-11-08",
+  "baseline_commit": "c0d5f80e299ccd1fad5225505ee60734313c28f8",
+  "baseline_skill_sha256": "567dea1703a23a650327930106ab2e5aec4e65d684da9fe85998fc14bf44d006",
+  "candidate_skill_sha256": "527239c38ea5ce0b88585aecdea462ee1f9971f0d3b9b279c50f62217901762a",
+  "model": "gpt-6.1-sol",
+  "effort": "medium",
+  "exact_serving_revision": "not exposed",
+  "independent_reviewer": {
+    "model": "gpt-6-astra",
+    "effort": "xhigh"
+  },
+  "cases": [
+    {
+      "id": "D01",
+      "baseline_points": 2,
+      "candidate_points": 4,
+      "possible": 4,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D02",
+      "baseline_points": 4,
+      "candidate_points": 4,
+      "possible": 4,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D03",
+      "baseline_points": 5,
+      "candidate_points": 8,
+      "possible": 8,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D04",
+      "baseline_points": 4,
+      "candidate_points": 4,
+      "possible": 4,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D05",
+      "baseline_points": 6,
+      "candidate_points": 6,
+      "possible": 6,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D06",
+      "baseline_points": 6,
+      "candidate_points": 6,
+      "possible": 6,
+      "candidate_pass": true,
+      "method": "public-fixture matched rerun"
+    },
+    {
+      "id": "D07",
+      "baseline_points": 5,
+      "candidate_points": 6,
+      "possible": 6,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D08",
+      "baseline_points": 2,
+      "candidate_points": 4,
+      "possible": 4,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D09",
+      "baseline_points": 6,
+      "candidate_points": 6,
+      "possible": 6,
+      "candidate_pass": true,
+      "method": "public-fixture matched rerun"
+    },
+    {
+      "id": "D10",
+      "baseline_points": 6,
+      "candidate_points": 6,
+      "possible": 6,
+      "candidate_pass": true,
+      "method": "public-fixture matched rerun"
+    },
+    {
+      "id": "D11",
+      "baseline_points": 4,
+      "candidate_points": 4,
+      "possible": 4,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D12",
+      "baseline_points": 6,
+      "candidate_points": 6,
+      "possible": 6,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D13",
+      "baseline_points": 6,
+      "candidate_points": 6,
+      "possible": 6,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D14",
+      "baseline_points": 4,
+      "candidate_points": 4,
+      "possible": 4,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "D15",
+      "baseline_points": 2,
+      "candidate_points": 4,
+      "possible": 4,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "H01",
+      "baseline_points": 4,
+      "candidate_points": 6,
+      "possible": 6,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "H02",
+      "baseline_points": 6,
+      "candidate_points": 6,
+      "possible": 6,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "H03",
+      "baseline_points": 6,
+      "candidate_points": 8,
+      "possible": 8,
+      "candidate_pass": true,
+      "method": "original matched run"
+    },
+    {
+      "id": "H04",
+      "baseline_points": 8,
+      "candidate_points": 8,
+      "possible": 8,
+      "candidate_pass": true,
+      "method": "public-fixture matched rerun"
+    }
+  ],
+  "combined_points": {
+    "baseline": 92,
+    "candidate": 106,
+    "possible": 106
+  },
+  "original_blind_points": {
+    "baseline": 90,
+    "candidate": 106,
+    "possible": 106
+  },
+  "critical_failures_observed": 0,
+  "deterministic_tests_passed": 22,
+  "raw_logs": "private; not distributed",
+  "evidence_hashes": {
+    "evaluation-freeze.json": "59672bfcf051903b4ed82963904cbe2973db3685862d22e85dd4a941ccefc4aa",
+    "candidate1-runtime-freeze.json": "707e1e9a6d5b78f196a0b0a33f1d0168860c0952c80853ff2132177c0418bb64",
+    "review/grades.json": "8a91927852b68abebb9fb86f29ca34a0a05d00cfdb5959fc8452187de88bd2b7",
+    "review/supplemental-grades-public-v3.json": "bb10f198203820650de82173da1819cdbc0fcf567a59e43f58d09073738b3f3d",
+    "review/source-review.md": "23f6572a4c7dbc71ed0d8d10d6dfb56675f3fcfd80a0e591457c72c05a6f0283",
+    "fixture-v3-freeze.json": "58b407fb3c6af30c45549bb5fc3c1c58afbe7d18c6566c48f1681b809d7bebf1"
+  }
+}

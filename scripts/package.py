@@ -12,11 +12,13 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / 'skills' / 'prompt-forge'
 ALIAS = ROOT / 'skills' / 'adaptive-prompt-builder'
-VERSION = '0.2.0'
+VERSION = '0.3.0'
 ARCHIVE = ROOT / 'dist' / ('prompt-forge-v' + VERSION + '.zip')
 CHECKSUMS = ROOT / 'dist' / 'SHA256SUMS'
 LEGACY_ARCHIVE = ROOT / 'dist' / 'adaptive-prompt-builder-v0.1.0.zip'
 LEGACY_ARCHIVE_SHA256 = '2467a25967aca798aaa89c0581fe60951320131d9f046c752ac35460446ed043'
+V020_ARCHIVE = ROOT / 'dist/prompt-forge-v0.2.0.zip'
+V020_ARCHIVE_SHA256 = 'a6ff4d6a137b33292664c71b2e93093dfd20d42ce49018e871076502be6b25c3'
 LINKS = re.compile(r'\[[^\]]*\]\(([^)]+)\)')
 ALIAS_NOTE = ('> Legacy alias: Adaptive Prompt Builder is now Prompt Forge. '
               'This standalone compatibility copy contains the same instructions; '
@@ -136,13 +138,18 @@ def expected_outputs():
     alias = alias_files(files)
     if not LEGACY_ARCHIVE.is_file() or hashlib.sha256(LEGACY_ARCHIVE.read_bytes()).hexdigest() != LEGACY_ARCHIVE_SHA256:
         raise ValueError('Frozen v0.1.0 archive is missing or changed')
+    if not V020_ARCHIVE.is_file() or hashlib.sha256(V020_ARCHIVE.read_bytes()).hexdigest() != V020_ARCHIVE_SHA256:
+        raise ValueError('Frozen v0.2.0 archive is missing or changed')
     outputs = {ALIAS / name: data for name, data in alias.items()}
     generated = {
         ROOT / 'portable/prompt-forge.md': portable_text(files).encode('utf-8'),
         ROOT / 'portable/adaptive-prompt-builder.md': portable_text(alias).encode('utf-8'),
         ARCHIVE: archive_bytes(files),
     }
-    checksum = LEGACY_ARCHIVE_SHA256 + '  ' + LEGACY_ARCHIVE.name + '\n'
+    checksum = ''
+    for historical in sorted(CHECKSUMS.parent.glob('*.zip')):
+        if historical != ARCHIVE:
+            checksum += hashlib.sha256(historical.read_bytes()).hexdigest() + '  ' + historical.name + '\n'
     for path, data in sorted(generated.items()):
         name = path.name if path.parent == CHECKSUMS.parent else '../portable/' + path.name
         checksum += hashlib.sha256(data).hexdigest() + '  ' + name + '\n'

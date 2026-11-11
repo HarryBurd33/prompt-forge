@@ -1,0 +1,26 @@
+{
+  "draft-now": [
+    "standalone reusable prompt",
+    "defaults labelled",
+    "no follow-up questions"
+  ],
+  "decline": [
+    "exact apple, orange, pear",
+    "no interview or recommendation"
+  ],
+  "correction": [
+    "CSV only and exact task,owner,due_date",
+    "empty missing values",
+    "no PDF deliverable"
+  ],
+  "prompt-only": [
+    "prompt for Skill Forge",
+    "local folder destination and no publication",
+    "no implementation/installation"
+  ],
+  "unavailable-tools": [
+    "no invented current prices or sources",
+    "explicit offline verification prerequisite",
+    "Markdown table and source/date columns"
+  ]
+}

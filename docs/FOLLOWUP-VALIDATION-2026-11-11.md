@@ -1,0 +1,26 @@
+# Follow-up validation — 2026-11-11
+
+This executes the five sessions in the [future validation plan](https://github.com/HarryBurd33/skill-forge/blob/main/docs/FUTURE-VALIDATION-PLAN.md). Results below distinguish exercised behavior from unmet host prerequisites. No Prompt Forge runtime change was justified by these checks.
+
+| Session | Executed result | Remaining limit |
+|---|---|---|
+| 1: model switching and checkpoint continuation | Current-chat sandbox and approved CLI 0.166.0 probes both returned `socket_not_found`. Alternate readback tool failed without selection data. Independent seven readback and 30 continuation checks passed. An actual new human-authorized turn resumed the saved task after quota, ownership and checkpoint verification. | Automatic selection/readback and distinct-turn continuation could not be exercised in this host state. `--sock` requires a documented existing endpoint; no endpoint was supplied or invented. Model Switcher 0.5.5 corrects its installed capability report; it does not manufacture host support. |
+| 2: evaluation access capture | Five controlled checks returned expected classifications: preflight PASS, declared explicit reads with incomplete host capture INCONCLUSIVE, undeclared lookalike sibling FAIL, changed bytes captured then restored FAIL, missing capture INCONCLUSIVE. The public Prompt Forge contract was pinned alongside synthetic inputs. | Available tool summaries do not cover all implicit and explicit file reads with hashes of consumed bytes. No complete production collector was adopted. |
+| 3: native artifacts and cloud | Existing synthetic XLSX imported to a private native Google Sheet. Provider readback confirmed both tabs, formulas and zero quantity. Pen quantity 0 → 2 → 0 recalculated grand total 16 → 20 → 16. Exported XLSX reopened with all four formulas and zero intact; both exported views were rendered and visually checked. | Word and Excel 16.114.4 are installed, but document-control reported no connected session and native app control timed out before opening Word. Native Office behavior and a Google-rendered browser view remain unverified. |
+| 4: generated GitHub execution | A fresh receiver (requested Sol/Medium) used a standalone Prompt Forge prompt to add exactly one synthetic documentation file on a dedicated branch and open [draft PR #1](https://github.com/HarryBurd33/prompt-forge/pull/1). Main and runtime files stayed unchanged during the test. A stale expected-head call failed; the otherwise identical correct-head control succeeded, with unchanged branch readback. | The stale response was a generic provider error; its detailed internal cause was not exposed. The paired control is differential evidence for expected-head protection. This small test does not establish broad autonomous publishing quality. |
+| 5: portability and allowance calibration | Fresh requested Sol/Medium and Luna/Medium runs each answered five fixed cases. Independent review (requested Astra/Extra High) passed all ten outputs and all 28 rubric checks. Draft now, decline, latest correction, prompt-only scope and offline prerequisite handling were preserved. | Exact serving revisions and complete implicit-read capture remain unknown. Task-attributable token/cost and held-out forecast measurements were unavailable, so no quota estimator or savings claim was adopted. |
+
+## Reproducible scope
+
+The [fixed cases](../evals/followup-2026-11-11/cases.json), [rubric](../evals/followup-2026-11-11/rubric.json) and actual [Sol](../evals/followup-2026-11-11/sol-output.json)/[Luna](../evals/followup-2026-11-11/luna-output.json) responses are sanitized public evidence. These are small text controls in the same host, not an isolated production benchmark or measured cross-host equivalence. Requested worker assignments are recorded separately from unexposed serving revisions. No output text is a self-issued test pass.
+
+The cloud artifact contains synthetic inventory only and remains private; its provider ID, raw responses and export are retained privately. Private chats, host paths, account details, signed download URLs and checkpoint state are excluded from source publication. The existing DOCX/XLSX fresh-receiver evidence remains unchanged.
+
+## Next work requires these prerequisites
+
+1. A supported native selection readback or documented existing daemon endpoint for the intended chat, then the original one-use continuation live acceptance sequence.
+2. A supported collector with explicit and implicit resource-read coverage, actual-byte hashing and independent coverage validation.
+3. A working connected native Word/Excel session or native app-control connection; reuse the synthetic files instead of changing real workbooks.
+4. Task-scoped measurements and held-out completed workloads before forecasting quota needs. Account percentages are not task tokens or cost.
+
+Keep these checks inconclusive until their prerequisites are observed. Do not create a service or disable permissions to obtain a pass. All supported independent tests above were completed; no background work was scheduled.

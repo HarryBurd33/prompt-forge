@@ -1,0 +1,22 @@
+[
+  {
+    "id": "draft-now",
+    "request": "Use Prompt Forge. Draft now: a reusable prompt for designing a neighborhood book club. Assume sensible defaults, label them, and do not ask questions."
+  },
+  {
+    "id": "decline",
+    "request": "Do not refine or interview me. Just alphabetize these words and return one comma-separated line: pear, apple, orange."
+  },
+  {
+    "id": "correction",
+    "request": "Use Prompt Forge to finish my prompt. Earlier brief: create a PDF task report. Latest correction: create CSV only, with exact header task,owner,due_date in that order. Input is a supplied list of tasks. Draft now; preserve missing values as empty cells and do not invent owners or dates."
+  },
+  {
+    "id": "prompt-only",
+    "request": "Use Prompt Forge to write a copyable prompt for Skill Forge to build a weekly-planning skill. Prompt only; do not build files, install anything or publish. Default to one local installable folder when the prompt is eventually executed; no GitHub publication is authorized. Draft now."
+  },
+  {
+    "id": "unavailable-tools",
+    "request": "Use Prompt Forge. Draft a prompt for an offline assistant with no browser to compare CURRENT prices of three laptops. No prices or sources have been supplied. Do not invent facts or claim browsing. The final requested output is a Markdown comparison table with source/date columns; be explicit about prerequisites that prevent verified completion."
+  }
+]

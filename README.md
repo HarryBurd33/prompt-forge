@@ -126,3 +126,5 @@ python3 -m unittest discover -s tests -v
 ```
 
 The canonical instructions generate the compatibility copy, both portable files, ZIP, and checksums. [AGENTS.md](AGENTS.md) preserves the usage-saving and independent-evaluation policy. MIT licensed; the adapted Skill Forge example's notices remain in [LICENSE](LICENSE).
+
+Recent evidence: [sessions 1–5 follow-up](docs/FOLLOWUP-VALIDATION-2026-11-11.md), including private cloud recalculation, a fresh GitHub receiver and bounded portability controls.

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "draft-now",
+    "response": "**Assumptions:** This is for a welcoming, recurring neighborhood book club for adults; it meets monthly at an accessible local venue; members choose books together; and the organizer has a modest budget. Adjust these defaults as needed.\n\n```text\nHelp me design a practical neighborhood book club that is welcoming, easy to organize, and sustainable over time. Assume a group of adults who live nearby, meet once a month at an accessible local venue, choose books together, and have a modest budget. Treat these as defaults, not facts, and flag any that need adapting.\n\nCreate a concise starter plan covering: the club's purpose and tone; a simple way to invite and welcome members; meeting length and a repeatable agenda; a fair process for choosing books; ways to include different reading preferences and members who cannot finish a book; basic organizer roles and communication; accessibility and cost considerations; and a low-effort first three-month launch plan. Include a sample invitation and a sample 60- to 90-minute meeting agenda. Keep the plan realistic for one volunteer organizer. Avoid assuming a specific neighborhood, venue, budget amount, or member count. Mark choices the organizer should customize.\n```"
+  },
+  {
+    "id": "decline",
+    "response": "apple, orange, pear"
+  },
+  {
+    "id": "correction",
+    "response": "```text\nConvert the supplied list of tasks into CSV. Output only the CSV text, with exactly this header row and column order:\ntask,owner,due_date\n\nCreate one data row per supplied task, preserving the task text. Put each task's owner and due date in the corresponding columns when explicitly provided. Leave missing values as empty cells; do not infer or invent owners or dates. Escape commas, quotation marks, and line breaks according to CSV rules. Do not add a PDF, commentary, extra columns, or other output.\n```"
+  },
+  {
+    "id": "prompt-only",
+    "response": "```text\nUse Skill Forge to create a reusable weekly-planning skill as one local installable folder. Deliver the complete folder and its files, following the current Skill Forge requirements for structure, metadata, and instructions. Design the skill to help a person turn their commitments and priorities into a realistic weekly plan, account for constraints and available time, and revise the plan when circumstances change. Keep the workflow practical and avoid assuming access to calendars, accounts, or external services; state optional integrations only if they are supported and explicitly configured.\n\nBefore creating files, inspect the applicable Skill Forge instructions and use them to shape the package. Include only files needed for the skill to work. Check the finished folder against those requirements and report its local path and any limits or assumptions. Do not install the skill, publish it, use GitHub, or create any external artifacts.\n```"
+  },
+  {
+    "id": "unavailable-tools",
+    "response": "```text\nCompare the current prices of these three laptops: [provide the three laptop models or exact product links]. Work offline and do not use a browser. No prices or source materials are currently supplied, so verified current-price comparison is impossible until the user provides dated price evidence, such as quotes, saved retailer listings, or source excerpts for each laptop. Do not guess, use remembered prices, invent sources or dates, or describe any price as current without evidence.\n\nOnce evidence is supplied, compare the laptops in a Markdown table with these columns: Laptop, Price, Source, Source date. Use the supplied evidence and preserve its dates; identify missing or incomparable evidence clearly. If evidence is still absent, return the table with the three laptop entries marked “Unavailable—source and dated price required” and explain briefly that offline access prevents verification. Do not claim to have browsed or verified current prices.\n```"
+  }
+]

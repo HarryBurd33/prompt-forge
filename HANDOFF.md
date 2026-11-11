@@ -11,3 +11,7 @@ Rollback: remove the unchanged owned recommendation block with `python3 scripts/
 ## Capability follow-up
 
 The [2026-11-08 audit](docs/CAPABILITY-AUDIT-2026-11-08.md) adds actual fresh-receiver XLSX, DOCX and research evidence plus usage examples. All four checks, including the no-browsing control, passed. The v0.3.0 runtime and installed files remain unchanged. Skill Forge owns the separate resource-check repair; its source/installation/publication status is recorded in that repository. Native Office/cloud and complete production capture limits remain explicit.
+
+## Follow-up sessions 1–5
+
+See [2026-11-11 validation](docs/FOLLOWUP-VALIDATION-2026-11-11.md) for the actual cloud round trip, fresh GitHub receiver and two requested-model text controls, plus current host limits. Runtime remains 0.3.0; all seven installed files match the canonical source exactly.

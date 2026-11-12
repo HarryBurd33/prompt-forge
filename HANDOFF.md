@@ -1,4 +1,16 @@
-# Prompt Forge v0.3.0 release handoff
+# Prompt Forge v0.4.0 release handoff
+
+The accepted upgrade puts the complete project outline, bounded task assignments, model and reasoning effort, acceptance/review, escalation and checkpoint instructions inside the final copyable prompt. It asks once after refinement unless routing is already requested, declined or settled by standing preference. Immediate drafting, explicit model choices, corrected answers and prompt-only scope remain controlling.
+
+The frozen behavioral comparison passed **9/9 candidate cases versus 4/9 baseline**, including three author-held-out cases. Source review and **25 deterministic tests** passed. See [validation and limits](docs/VALIDATION-v0.4.0.md) and [actual evidence](evals/v0.4.0/independent-grades.json). The grader had prior baseline-executor exposure; task-level cost and native switching were not measured.
+
+All seven installed files match canonical source and ZIP bytes. The prior v0.3.0 tree was backed up outside discovery and matched the frozen baseline; global instructions were unchanged. Current SKILL.md SHA-256: `157d40c1e7581f3ea098485ce8fc515b12d71a5ac8d78242ab68be9beb11bf0e`. ZIP SHA-256: `08d5e8ecccc088011242ef823d3c7823ca8f0d46049a292b07360ab19b6738ab`. The generated alias and portable variants are synchronized; historical ZIPs remain immutable. This filesystem verification does not claim new native-discovery or automatic-continuation success.
+
+Rollback uses the exact backup printed by `python3 scripts/install.py --root YOUR_EXISTING_SKILLS_ROOT --upgrade`; run the same helper with `--rollback EXACT_PRINTED_BACKUP`. It refuses later customizations. No global-rule removal is needed for this upgrade. See [migration](docs/MIGRATION.md).
+
+The repository remains the existing public `HarryBurd33/prompt-forge`; the v0.4.0 distribution is [the complete skill ZIP](dist/prompt-forge-v0.4.0.zip). Earlier records below are historical, not current runtime claims.
+
+## Historical v0.3.0 release handoff
 
 The v0.3.0 runtime passed the frozen behavioral improvement gate and independent source review. The existing canonical installation is updated, seven file hashes match, the prior version is backed up, and the managed global recommendation rule preserves all unrelated instructions. Native recommendation, direct-execution exclusion and explicit invocation checks passed. See [validation](docs/VALIDATION-v0.3.0.md) for evidence and limitations.
 

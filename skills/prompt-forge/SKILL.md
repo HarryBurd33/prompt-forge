@@ -3,7 +3,7 @@ name: prompt-forge
 description: Refine ideas or existing prompts through focused questions, constructive challenges, drafts, and feedback. Produce a standalone prompt, Skill Forge package handoff or Agent Forge agent handoff. Recommend refinement selectively for material uncertainty; do not turn clear execution into interviews.
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # Prompt Forge
@@ -32,7 +32,7 @@ For a vague answer, seek an example that clarifies the current decision. A clear
 
 Match depth to unresolved decisions and consequences. **Quick** addresses blockers; **thorough** explores material branches and failure cases; **expert challenge** stresses assumptions and alternatives. By default, adapt depth rather than imposing a fixed question count. Respect these controls:
 
-- **Draft now:** stop interviewing and immediately provide a provisional standalone prompt with explicit assumptions and open blockers; do not append a question.
+- **Draft now:** stop interviewing and immediately provide a provisional standalone prompt with explicit assumptions and open blockers; do not append a question. If routing is unsettled, keep the choice pending for resumed finalization. Carry any settled routing choice into the draft.
 - **Skip / use your judgment:** record an assumption or choose a routine default; do not invent user facts or authorization.
 - **Go deeper:** explore the most consequential remaining uncertainty.
 - **Resume:** use the available brief and latest corrections, asking only about unresolved or changed matters. If state is unavailable, say so and request the smallest useful handoff.
@@ -56,7 +56,9 @@ Build the prompt around the outcome, necessary context, input contract, essentia
 
 When artifact details affect usability, read [artifact contracts](references/artifact-contracts.md). Route by outcome using [routing and companions](references/routing-and-companions.md): a one-off task or copyable reusable prompt stays an ordinary prompt; an installable reusable workflow package goes to Skill Forge; an executable task agent goes to Agent Forge. For Skill Forge, also read [Skill Forge handoff](references/skill-forge-handoff.md). Carry one shared brief and settled answers into mixed handoffs, with the primary deliverable first. Ask one consequential question only if its answer changes the route. Preparing a build prompt does not authorize building; preserve existing explicit build authorization.
 
-For substantial work or handoff risk, inspect the loaded catalog and matching current instructions for Task Checkpoint and Model Switcher; use the linked companion guidance. Reuse standing preferences and matching task ownership. Their absence must leave a usable prompt; never invent installation, quota telemetry, switching, saved state or automatic continuation.
+After refining a task that warrants a project outline, ask once whether to include a bounded, cost-aware model and effort plan in the final prompt. Skip the question when the user has requested or declined it, an applicable standing preference already settles it, or the user says to draft now. Record the choice and honor later corrections. Keep trivial work lightweight.
+
+When routing is accepted, put the whole project outline, bounded assignments, review and transition instructions **inside** the one copyable prompt, for all three outcome routes. Use [the routing contract](references/routing-and-companions.md#bounded-cost-aware-routing) to specify each meaningful package and its acceptance checks. Keep the outline usable on its own. When relevant, inspect the loaded skill catalog and current instructions for optional Model Switcher and Task Checkpoint support.
 
 Review whether a fresh receiving model has the context, inputs, tools, permissions, and success criteria needed. If the user wants a test, or a small safe test materially helps an authorized task, run it only with available capabilities and within scope. Distinguish actual execution from static review and illustrations; do not create external artifacts merely to test a prompt. If execution is requested, apply the completed prompt to the supplied inputs and verify the actual output using relevant host capabilities.
 

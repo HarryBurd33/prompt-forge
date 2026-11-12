@@ -12,6 +12,8 @@
 - Four-part diagnosis when useful (practitioner action; raw material; method/tool; independent check):
 - Companion presence, standing preferences, matching state and verified capabilities:
 - Recommendation accepted / declined / already made:
+- Optional model and effort plan: yes / declined / pending; source of decision, whether asked, and latest correction:
+- When accepted, project outline and bounded assignments, review and escalation, checkpoint boundaries and manual fallback:
 - Representative example:
 - Observable success checks:
 - Draft/version and feedback:

@@ -1,6 +1,6 @@
 # Migrating to Prompt Forge
 
-## v0.2.0 to v0.3.0
+## v0.2.0 or v0.3.0 to v0.4.0
 
 Select the existing discovery root; do not create a second installation:
 
@@ -8,7 +8,7 @@ Select the existing discovery root; do not create a second installation:
 python3 scripts/install.py --root ~/.codex/skills --upgrade
 ```
 
-Only the exact five-file canonical v0.2.0 manifest is recognized. An extra file, edited byte or symlink refuses the upgrade; preserve customizations for a manual merge. The helper stages and verifies the full new package before moving the old folder to `ROOT_PARENT/.prompt-forge-backups/prompt-forge-v0.2.0-N/`. A sibling `.json` record binds old/new hashes to that root. Both stay outside discovery. The helper recognizes aliases only in the selected root; inspect other host/project roots separately to avoid competing installations. It does not claim cross-root discovery inventory.
+Only exact known canonical v0.2.0 and v0.3.0 manifests are recognized. An extra file, edited byte or symlink refuses the upgrade; preserve customizations for a manual merge. The helper stages and verifies the full new package before moving the old folder to `ROOT_PARENT/.prompt-forge-backups/prompt-forge-vPREVIOUS-N/`. A sibling `.json` record binds old/new hashes to that root. Both stay outside discovery. The helper recognizes aliases only in the selected root; inspect other host/project roots separately to avoid competing installations. It does not claim cross-root discovery inventory.
 
 Use the exact backup path printed by the upgrade to restore:
 
@@ -16,7 +16,7 @@ Use the exact backup path printed by the upgrade to restore:
 python3 scripts/install.py --root ~/.codex/skills --rollback ~/.codex/.prompt-forge-backups/prompt-forge-v0.2.0-1
 ```
 
-Rollback verifies both trees and ownership, refuses changes made after upgrade, and moves the displaced v0.3.0 outside discovery before restoring v0.2.0. Repeated install/upgrade of the unchanged current version is a no-op. Keep the backup/record together. Ordinary rename failures restore moved directories where possible; interruption or power loss is not a transactional filesystem guarantee. Inspect an uncertain outcome before retrying.
+Rollback verifies both trees and ownership, refuses changes made after upgrade, and moves the displaced current version outside discovery before restoring the recorded prior version. Repeated install/upgrade of the unchanged current version is a no-op. Keep the backup/record together. Ordinary rename failures restore moved directories where possible; interruption or power loss is not a transactional filesystem guarantee. Inspect an uncertain outcome before retrying.
 
 ## Optional global recommendation rule
 
@@ -49,7 +49,7 @@ python3 scripts/install.py --root ~/.agents/skills --migrate
 
 `--root` means the directory containing installed skill directories. The default personal location is `~/.agents/skills`; use `--root .agents/skills` for a project installation. For a legacy host that discovers `~/.codex/skills`, pass that path explicitly. The helper migrates within the selected root, so select the root where the old skill is actually installed. You can use any disposable directory to try the helper first. The helper has no runtime dependencies and does not edit application settings. Reload skills or restart the host if needed after installation.
 
-Migration recognizes exact file hashes from the original v0.1.0 release, the generated v0.2.0 alias and the current generated alias. It prepares and verifies the canonical copy, moves the unchanged legacy directory into `ROOT_PARENT/.prompt-forge-backups/adaptive-prompt-builder-N/`, then installs Prompt Forge. For `~/.agents/skills`, backups live under `~/.agents/.prompt-forge-backups/`, outside the skills discovery directory. If the current canonical version is already installed unchanged, it is reused. Repeating an installation or migration leaves the installed bytes unchanged and creates no additional backup after the legacy directory has been migrated.
+Migration recognizes exact file hashes from the original v0.1.0 release, the generated v0.2.0/v0.3.0 aliases and the current generated alias. It prepares and verifies the canonical copy, moves the unchanged legacy directory into `ROOT_PARENT/.prompt-forge-backups/adaptive-prompt-builder-N/`, then installs Prompt Forge. For `~/.agents/skills`, backups live under `~/.agents/.prompt-forge-backups/`, outside the skills discovery directory. If the current canonical version is already installed unchanged, it is reused. Repeating an installation or migration leaves the installed bytes unchanged and creates no additional backup after the legacy directory has been migrated.
 
 The helper refuses to overwrite customized, unrecognized, or extra files in either relevant skill directory. It also refuses symlink installations. On refusal, existing skill files stay unchanged. For a custom installation, make a manual merge into a separate copy of Prompt Forge, preserving your edits. Review the result, move the old custom installation outside the discovery directory, and install your reviewed copy yourself. There is no force or overwrite switch. Keep backups until you are satisfied with the migration.
 
@@ -76,6 +76,6 @@ python3 scripts/package.py --check
 python3 -m unittest discover -s tests -v
 ```
 
-The builder synchronizes the full alias, generates both portable prompts, and produces `dist/prompt-forge-v0.3.0.zip` plus `dist/SHA256SUMS`. Version metadata must agree with the packaging version. Checks reject broken or escaping source links, generated drift, changed frozen v0.1.0 archive bytes, and unsafe ZIP paths. The new ZIP contains only a complete `prompt-forge/` directory. Alias behavior is generated from the canonical source rather than maintained separately.
+The builder synchronizes the full alias, generates both portable prompts, and produces `dist/prompt-forge-v0.4.0.zip` plus `dist/SHA256SUMS`. Version metadata must agree with the packaging version. Checks reject broken or escaping source links, generated drift, changed frozen v0.1.0/v0.2.0/v0.3.0 archive bytes, and unsafe ZIP paths. The new ZIP contains only a complete `prompt-forge/` directory. Alias behavior is generated from the canonical source rather than maintained separately.
 
-Historical `dist/adaptive-prompt-builder-v0.1.0.zip` and `dist/prompt-forge-v0.2.0.zip` remain unchanged and listed in checksums. The checksum for `portable/adaptive-prompt-builder.md` tracks its current generated compatibility content. Frozen v0.1.0 evaluations are historical evidence, not evaluation results for v0.2.0.
+Historical `dist/adaptive-prompt-builder-v0.1.0.zip` , `dist/prompt-forge-v0.2.0.zip` and `dist/prompt-forge-v0.3.0.zip` remain unchanged and listed in checksums. The checksum for `portable/adaptive-prompt-builder.md` tracks its current generated compatibility content. Frozen v0.1.0 evaluations are historical evidence, not evaluation results for v0.2.0.

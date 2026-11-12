@@ -2,7 +2,23 @@
 
 Turn an idea into a standalone prompt another assistant can use in a fresh chat. Prompt Forge asks focused questions, challenges weak assumptions, makes drafts concrete, and follows up on consequential gaps until the brief is clear. It works across writing, research, planning, spreadsheets, software, GitHub work, and skill design.
 
-**Prompt first; execution only when asked.** v0.3.0 adds selective recommendations, a concrete “deeper, not bigger” diagnosis, outcome routing to Skill Forge or Agent Forge, and optional Task Checkpoint / Model Switcher awareness. A copyable reusable prompt stays an ordinary prompt; companion skills remain optional.
+**Prompt first; execution only when asked.** v0.4.0 adds a complete project outline with bounded model/effort assignments inside the finished prompt. After refinement, Prompt Forge offers this once unless you have already requested, declined or authorized it through a standing preference. Routine work uses a less costly qualified assignment; difficult decisions use a stronger suitable assignment. Companion skills remain optional.
+
+## Build a prompt with model assignments
+
+```text
+Use $prompt-forge to refine this idea: [your project]. Include the entire
+project outline in the final prompt, broken into bounded tasks. Assign the
+least costly qualified model and effort to each task, with dependencies,
+acceptance checks, escalation conditions and checkpoint/handoff points.
+Prompt only; do not start building yet.
+```
+
+This request settles the routing choice, so it will not ask you to opt in again. Without that choice, a substantial refined project gets one offer. You can decline, change the choice later, or say “draft now” to receive a provisional prompt without another question.
+
+The receiving executor should verify its current model catalog, tools and cost evidence before dispatch. Exact model names come from that host; an unknown host receives provisional roles to resolve before execution. The plan includes review, retries and context-transfer overhead, so splitting a tiny task may cost more than keeping it together. It does not guarantee the globally cheapest result.
+
+Checkpoints preserve completed work, artifacts, decisions, validation and the next bounded task before model, effort or worker changes. Actual switching requires supported controls and verified readback; an unsupported host receives a manual handoff. Generating the plan does not launch workers, authorize publication or permit paid API spending. Use the resulting prompt with an explicit build request when ready.
 
 ## Research and real files
 
@@ -14,7 +30,7 @@ Copy the prompt into a host with verified research tools, then explicitly ask th
 
 For real files, specify the file rather than just the application: “an .xlsx workbook with named sheets and formulas” or “a one-page .docx memo.” Prompt Forge prepares the prompt; the receiving host supplies authoring, recalculation and rendering tools. See the actually generated [workbook](examples/workbook-prompt.md), [document](examples/document-prompt.md) and [research](examples/research-prompt.md) prompts.
 
-The [capability audit and fresh-receiver tests](docs/CAPABILITY-AUDIT-2026-11-08.md) verify these bounded workflows. The v0.3.0 runtime is unchanged; the supplement does not replace historical evaluation results.
+The [capability audit and fresh-receiver tests](docs/CAPABILITY-AUDIT-2026-11-08.md) verify these bounded workflows. Those v0.3.0 results remain historical and do not replace the v0.4.0 routing checks.
 
 ## Install
 
@@ -25,7 +41,7 @@ Use $skill-installer to install skills/prompt-forge from
 https://github.com/HarryBurd33/prompt-forge.
 ```
 
-Or extract [the complete skill ZIP](dist/prompt-forge-v0.3.0.zip) into `~/.agents/skills/`. The resulting path should be `~/.agents/skills/prompt-forge/SKILL.md`, with its references and template alongside it. For a project installation, use the project's `.agents/skills/` directory. These paths follow the [official OpenAI skills documentation](https://learn.chatgpt.com/docs/build-skills). If the skill does not appear, restart the host.
+Or extract [the complete skill ZIP](dist/prompt-forge-v0.4.0.zip) into `~/.agents/skills/`. The resulting path should be `~/.agents/skills/prompt-forge/SKILL.md`, with its references and template alongside it. For a project installation, use the project's `.agents/skills/` directory. These paths follow the [official OpenAI skills documentation](https://learn.chatgpt.com/docs/build-skills). If the skill does not appear, restart the host.
 
 From a cloned repository, the safe install helper is:
 
@@ -33,7 +49,7 @@ From a cloned repository, the safe install helper is:
 python3 scripts/install.py --root ~/.agents/skills
 ```
 
-Upgrading an unchanged Prompt Forge v0.2.0 in its existing root? Run `python3 scripts/install.py --root ~/.codex/skills --upgrade` (adjust the root to the actual installation). The helper verifies exact known hashes, backs up outside discovery, and refuses customizations.
+Upgrading an unchanged Prompt Forge v0.2.0 or v0.3.0 in its existing root? Run `python3 scripts/install.py --root ~/.codex/skills --upgrade` (adjust the root to the actual installation). The helper verifies exact known hashes, backs up outside discovery, and refuses customizations.
 
 Upgrading Adaptive Prompt Builder? Use `--migrate` and read [migration and rollback](docs/MIGRATION.md). Customized copies are preserved for a manual merge. The repository was renamed in place, preserving history and public visibility. `prompt-forge` is the canonical package, directory, and invocation name; the old name remains a generated standalone compatibility alias. Install one name, not both.
 
@@ -113,7 +129,9 @@ Available tools determine whether a recipient can browse, create files, edit a c
 
 ## Validation and maintenance
 
-v0.3.0 passed 19 matched behavioral cases (including four corrected fixture pairs), independent review, 22 filesystem tests and fresh native installation checks. See [v0.3.0 validation and limits](docs/VALIDATION-v0.3.0.md) and [foundations](docs/FOUNDATIONS-v0.3.0.md). Earlier reports below remain historical.
+v0.4.0 passed all nine frozen routing/regression cases versus four for the prior version, independent source review, and 25 deterministic tests. See [v0.4.0 validation and limits](docs/VALIDATION-v0.4.0.md) and [routing foundations](docs/FOUNDATIONS-v0.4.0.md). This validates prompt construction, not actual model switching or measured savings.
+
+Historically, v0.3.0 passed 19 matched behavioral cases (including four corrected fixture pairs), independent review, 22 filesystem tests and fresh native installation checks. See [v0.3.0 validation and limits](docs/VALIDATION-v0.3.0.md) and [foundations](docs/FOUNDATIONS-v0.3.0.md). Earlier reports below remain historical.
 
 See the [requirements-to-evidence checklist](docs/REQUIREMENTS.md), [v0.2.0 validation](docs/VALIDATION-v0.2.0.md), [handoff](HANDOFF.md), and [foundations](docs/FOUNDATIONS.md). [v0.1.0 validation](docs/VALIDATION.md) and frozen evaluation records remain historical evidence, not claims about this release.
 

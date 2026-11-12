@@ -1,0 +1,216 @@
+{
+  "rubric_version": 1,
+  "reviewer_exposure": "The grader previously authored baseline-output.json as the baseline executor. The rubric was fixed before grading.",
+  "source_contract": "pass",
+  "source_review": "independent-source-review.md",
+  "gate": "pass",
+  "comparison_limit": "One comparison per arm. Cases share context within each arm. Actual serving revision is unknown. No production resource-access audit was performed.",
+  "improvement": "R01 candidate pass vs. baseline fail.",
+  "arms": {
+    "baseline": [
+      {
+        "id": "R01",
+        "pass": false,
+        "critical_violations": [],
+        "reason": "The response gives a build prompt without the optional routing question.",
+        "evidence": [
+          "Treat the duplicate-SKU policy as a design decision."
+        ]
+      },
+      {
+        "id": "R02",
+        "pass": false,
+        "critical_violations": [],
+        "reason": "There is a complete project outline and cheaper docs option, but no bounded consequential review, explicit retry limits, or milestone checkpoint policy.",
+        "evidence": [
+          "Use Sol medium (cost 3) for the parser, CLI, tests, and integrated verification.",
+          "Luna low (cost 1) can draft the README",
+          "Reserve escalation to a higher qualified effort for a concrete issue the assigned effort cannot resolve."
+        ]
+      },
+      {
+        "id": "R03",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "The standalone local prompt respects the decline and specifies the requested validation and artifacts.",
+        "evidence": [
+          "Use local files and run all checks offline.",
+          "write errors.csv by default, with exact headers row,reason."
+        ]
+      },
+      {
+        "id": "R04",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "The provisional prompt exposes undecided inputs, preserves citation checks, and contains no appended question or unsupported capability claim.",
+        "evidence": [
+          "The exact topic, locality, and sources are open.",
+          "If browsing or archive access is unavailable during execution, work from supplied materials and record the missing evidence and its effect on the conclusions."
+        ]
+      },
+      {
+        "id": "R05",
+        "pass": false,
+        "critical_violations": [],
+        "reason": "The full outline preserves Sol medium and avoids substitution, but lacks checkpoints and assignment reassessment.",
+        "evidence": [
+          "Use Sol medium for every task in this prompt, including design, migration, link verification, and guide writing.",
+          "If the host cannot select or verify Sol medium, report the limitation and provide the next local step for a Sol medium session."
+        ]
+      },
+      {
+        "id": "R06",
+        "pass": false,
+        "critical_violations": [],
+        "reason": "The full Agent Forge build outline is present, but model roles lack provisional effort tiers, predispatch pair resolution is underspecified, and no copyable unsaved checkpoint handoff is supplied.",
+        "evidence": [
+          "The receiving host and model catalog are unknown.",
+          "a lower-cost qualified model and implementation and verification to a qualified coding model.",
+          "provide the package contents and exact setup commands as a copyable handoff"
+        ]
+      },
+      {
+        "id": "R07",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "The latest decline is carried forward by omitting routing; the prompt preserves the local skill delivery and exact Markdown table contract.",
+        "evidence": [
+          "Deliver the skill as a local folder.",
+          "task, owner, due_date.",
+          "Leave owner empty when the notes do not establish who owns the task."
+        ]
+      },
+      {
+        "id": "R08",
+        "pass": false,
+        "critical_violations": [],
+        "reason": "The prompt assigns cheaper routine work and stronger diagnosis, but lacks a full set of bounded phases with owned acceptance and milestone checkpoints.",
+        "evidence": [
+          "Astra high (cost 8) for difficult conflicting-evidence diagnosis design and review.",
+          "Increase effort only for a demonstrated unmet acceptance check.",
+          "Pass the exact scope, local inputs, confirmed decisions, checks, and next action at each handoff."
+        ]
+      },
+      {
+        "id": "R09",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "The short standalone draft uses the exact CSV contract, leaves missing fields empty, and appends no question.",
+        "evidence": [
+          "task,owner,due_date",
+          "If either is missing or ambiguous, leave that field empty.",
+          "return only the CSV text with no Markdown fence or surrounding prose."
+        ]
+      }
+    ],
+    "candidate": [
+      {
+        "id": "R01",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "Offers one optional bounded routing decision after treating duplicate policy as delegated design. It leaves the settled domain constraints and execution untouched.",
+        "evidence": [
+          "The build prompt will ask the implementer to choose and document a duplicate-SKU policy before writing the parser.",
+          "Would you like it to include a bounded, cost-aware model and effort plan for policy design, implementation, testing, and documentation?"
+        ]
+      },
+      {
+        "id": "R02",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "Includes the full standalone build in dependency order, exact assignments and gates, reviewed verification, one-retry limit, and a verified or manual checkpoint handoff.",
+        "evidence": [
+          "Build outline in dependency order.",
+          "Implement the validator and CLI — sol medium (3)",
+          "Write the README — luna low (1)",
+          "have a sol medium reviewer compare expectations with the requirements",
+          "Allow one focused repair and rerun per failed gate",
+          "save and verify a local handoff"
+        ]
+      },
+      {
+        "id": "R03",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "Gives the requested local prompt without a routing offer, assignment, or companion prerequisite.",
+        "evidence": [
+          "Write errors.csv with exact headers row,reason.",
+          "Keep all work offline."
+        ]
+      },
+      {
+        "id": "R04",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "Gives a provisional standalone research prompt, labels the topic and source access as open, and appends no question or unsupported model claim.",
+        "evidence": [
+          "The locality, exact topic and available source collections are open decisions.",
+          "Treat proposed collections as leads until inspected.",
+          "The optional model and effort plan is pending."
+        ]
+      },
+      {
+        "id": "R05",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "Completes the project outline with per-phase acceptance and checkpoints, preserves Sol medium for every package and review, and treats lack of support as a blocker.",
+        "evidence": [
+          "Use sol medium for every package and review, as explicitly selected.",
+          "Accept delivery when the project builds, the migration inventory reconciles, internal links and anchors pass, and the documented paths work.",
+          "Recheck qualification and access at each boundary or failure while preserving the explicit sol medium choice.",
+          "If the pair is unsupported, flag the blocker and retain the user's selection."
+        ]
+      },
+      {
+        "id": "R06",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "Gives the complete manual Agent Forge build with provisional effort tiers, live-catalog resolution, exact decimal and duplicate checks, and an inline fallback when durable handoff is unavailable.",
+        "evidence": [
+          "Resolve the exact model and effort for each role from the receiving host's live catalog before selection.",
+          "a software design role at medium effort",
+          "an independent correctness reviewer at high effort",
+          "a documentation role at low effort",
+          "copyable manual resume instruction containing the checkpoint path or inline handoff, next action and check, and exact picker target if verified."
+        ]
+      },
+      {
+        "id": "R07",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "Delivers the local Skill Forge prompt with the exact Markdown table contract and blank unknown owners. The corrected handoff omits routing.",
+        "evidence": [
+          "Deliver the finished skill as a local folder",
+          "Use the exact Markdown table headers task, owner, due_date in that order.",
+          "Leave unknown owner and due_date cells empty."
+        ]
+      },
+      {
+        "id": "R08",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "Applies the standing preference without reasking, puts bounded build and review assignments inside the prompt, and includes verification, retry, checkpoint and fallback rules.",
+        "evidence": [
+          "Apply the standing least-cost qualified preference to build assignments.",
+          "astra high (8), qualified for architecture and conflicting evidence.",
+          "luna low (1), qualified for routine documentation.",
+          "Assign a distinct astra high (8) reviewer where supported",
+          "Allow one focused repair and rerun per gate",
+          "Before any change of worker, model or effort, save and verify"
+        ]
+      },
+      {
+        "id": "R09",
+        "pass": true,
+        "critical_violations": [],
+        "reason": "Delivers a concise standalone draft with CSV only, exact headers, empty missing fields, and no question or external action.",
+        "evidence": [
+          "task,owner,due_date",
+          "Leave any missing field empty.",
+          "Return only CSV text.",
+          "perform no external actions."
+        ]
+      }
+    ]
+  }
+}

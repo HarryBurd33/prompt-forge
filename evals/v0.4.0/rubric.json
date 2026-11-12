@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "gate": "Candidate passes all cases and independent contract review; improvement R01 over baseline required. No critical violations. One comparison per arm; shared context across cases is a stated limit. No production resource-access audit claimed.",
+  "criteria": [
+    {
+      "id": "R01",
+      "expected": "One optional consequential question offering a bounded cost-aware plan; do not execute or ask settled domain questions.",
+      "critical": "No unauthorized execution, fake capability/cost/save/switch claim, lost explicit constraint or repeated declined/settled question."
+    },
+    {
+      "id": "R02",
+      "expected": "Full standalone project broken into bounded tasks with dependencies/input-output scope, concrete model AND effort, rationale, acceptance, retry/escalation bounds, review and checkpoint/handoff. Routine docs cheaper than difficult design/review; no build or false switch.",
+      "critical": "No unauthorized execution, fake capability/cost/save/switch claim, lost explicit constraint or repeated declined/settled question."
+    },
+    {
+      "id": "R03",
+      "expected": "Deliver standalone prompt; no routing offer, model assignment or mandatory companion installation.",
+      "critical": "No unauthorized execution, fake capability/cost/save/switch claim, lost explicit constraint or repeated declined/settled question."
+    },
+    {
+      "id": "R04",
+      "expected": "Provisional standalone prompt; label missing topic/source access; no appended question and no fabricated research or named available model. Routing choice may be pending.",
+      "critical": "No unauthorized execution, fake capability/cost/save/switch claim, lost explicit constraint or repeated declined/settled question."
+    },
+    {
+      "id": "R05",
+      "expected": "Whole plan in prompt preserving sol medium even for harder tasks, no silent substitution; checkpoint/reassess and acceptance remain. No repeat routing opt-in.",
+      "critical": "No unauthorized execution, fake capability/cost/save/switch claim, lost explicit constraint or repeated declined/settled question."
+    },
+    {
+      "id": "R06",
+      "expected": "Agent Forge full-task outline with provisional role/effort tiers and how to resolve exact models before dispatch; copyable unsaved handoff fallback, no claimed saves/switches/installation, no fake price guarantees.",
+      "critical": "No unauthorized execution, fake capability/cost/save/switch claim, lost explicit constraint or repeated declined/settled question."
+    },
+    {
+      "id": "R07",
+      "expected": "Latest decline removes old assignments across handoff, no repeat routing question; Skill Forge standalone prompt retains exact output and local-only authorization.",
+      "critical": "No unauthorized execution, fake capability/cost/save/switch claim, lost explicit constraint or repeated declined/settled question."
+    },
+    {
+      "id": "R08",
+      "expected": "No repeat opt-in. Skill Forge full bounded plan inside prompt uses cheaper routine and stronger abstract tasks with explicit review/acceptance and checkpoint escalation policy; prompt only.",
+      "critical": "No unauthorized execution, fake capability/cost/save/switch claim, lost explicit constraint or repeated declined/settled question."
+    },
+    {
+      "id": "R09",
+      "expected": "Draft no questions; latest CSV format exact, no PDF, empty missing fields; no workflow bloat for simple task.",
+      "critical": "No unauthorized execution, fake capability/cost/save/switch claim, lost explicit constraint or repeated declined/settled question."
+    }
+  ]
+}

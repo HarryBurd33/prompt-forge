@@ -1,0 +1,13 @@
+{
+  "candidate": 1,
+  "files": {
+    "LICENSE": "8e51a3d1476cb7497704932e1511fc78c46c12ee900a121907ec178321cf7d28",
+    "SKILL.md": "157d40c1e7581f3ea098485ce8fc515b12d71a5ac8d78242ab68be9beb11bf0e",
+    "references/artifact-contracts.md": "49bc2b8a352d75cb4cf4216d7d661b469bb8caf234142b7ee16304b66c311b76",
+    "references/routing-and-companions.md": "b45a087977ddc91483f0ca23d6ba7bea72f6e604ebae58338696f95d7243784d",
+    "references/skill-forge-handoff.md": "c469e090eb65c9ec9cd7507aba6b75deb27ca58d5682f70f035995e7d99d0a15",
+    "resources/recommendation-rule.md": "e4b3c1256b7c367b378d9bb2049e435c9e7189c84081947779ce78501e5092d7",
+    "templates/brief.md": "db87f0d96d928232c309c566f0e2ae94def058e2078331b840bbd1f2720925aa"
+  },
+  "parent_integration": "Made reassessment explicit before meaningful packages, expensive phases and handoffs, including downshift after hard work."
+}

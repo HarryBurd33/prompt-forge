@@ -61,6 +61,41 @@ class UpgradeRuleTests(unittest.TestCase):
         self.assertEqual(tree(self.skill), before)
         self.install('--rollback', backup, ok=False)
 
+    def test_v030_upgrade_preserves_backup_and_round_trips(self):
+        self.root.mkdir(parents=True)
+        with zipfile.ZipFile(REPO / 'dist/prompt-forge-v0.3.0.zip') as z:
+            z.extractall(self.root)
+        before = tree(self.skill)
+        self.install(ok=False)
+        self.assertEqual(tree(self.skill), before)
+        self.install('--upgrade')
+        self.assertEqual(tree(self.skill), tree(REPO / 'skills/prompt-forge'))
+        backup = next(p for p in (self.home / '.prompt-forge-backups').iterdir() if p.is_dir())
+        self.assertTrue(backup.name.startswith('prompt-forge-v0.3.0-'))
+        self.assertEqual(tree(backup), before)
+        self.install('--upgrade')
+        self.assertEqual(len(list((self.home / '.prompt-forge-backups').glob('*.json'))), 1)
+        self.install('--rollback', backup)
+        self.assertEqual(tree(self.skill), before)
+
+    def test_v030_customization_and_changed_rollback_refused(self):
+        self.root.mkdir(parents=True)
+        with zipfile.ZipFile(REPO / 'dist/prompt-forge-v0.3.0.zip') as z:
+            z.extractall(self.root)
+        primary = self.skill / 'SKILL.md'
+        original = primary.read_bytes()
+        primary.write_bytes(original + b'\nLocal customization\n')
+        before = tree(self.skill)
+        self.install('--upgrade', ok=False)
+        self.assertEqual(tree(self.skill), before)
+        primary.write_bytes(original)
+        self.install('--upgrade')
+        backup = next(p for p in (self.home / '.prompt-forge-backups').iterdir() if p.is_dir())
+        primary.write_bytes(primary.read_bytes() + b'\nLater customization\n')
+        before = tree(self.skill)
+        self.install('--rollback', backup, ok=False)
+        self.assertEqual(tree(self.skill), before)
+
     def test_known_v020_alias_migration_and_customization_refusal(self):
         alias = self.root / 'adaptive-prompt-builder'
         self.root.mkdir(parents=True)

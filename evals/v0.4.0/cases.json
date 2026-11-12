@@ -1,0 +1,47 @@
+[
+  {
+    "id": "R01",
+    "split": "development",
+    "input": "Use Prompt Forge. All project requirements are settled: build a local Python tool that validates inventory CSV columns sku,quantity and emits errors.csv; include an ambiguous duplicate-SKU policy design, parser implementation, tests and a README. No network or publication. Deliver a copyable build prompt, not code. Success: negative quantities and duplicate SKUs are handled consistently, tests pass, documented CLI works. Synthetic host catalog (fixture, not real pricing): luna low/medium qualified for routine text and extraction, estimated relative cost 1; sol medium/high qualified for bounded code/tools, cost 3; terra medium qualified for visual documents, cost 3; astra high/xhigh qualified for difficult architecture/diagnosis and consequential review, cost 8. All support local files. Estimates exclude retry/transfer overhead. No paid API or native switching tool in this test. Task Checkpoint/Model Switcher are not installed in this isolated test."
+  },
+  {
+    "id": "R02",
+    "split": "development",
+    "input": "Use Prompt Forge to write the final prompt for the inventory project: local Python tool, sku,quantity CSV, reject all duplicate SKUs and negative quantities to errors.csv with row,reason. Include CLI, tests and README. I already accepted bounded cost-aware routing; give the entire project outline inside the prompt, not just routing advice. Work prompt only. Synthetic host catalog (fixture, not real pricing): luna low/medium qualified for routine text and extraction, estimated relative cost 1; sol medium/high qualified for bounded code/tools, cost 3; terra medium qualified for visual documents, cost 3; astra high/xhigh qualified for difficult architecture/diagnosis and consequential review, cost 8. All support local files. Estimates exclude retry/transfer overhead. No paid API or native switching tool in this test. Task Checkpoint/Model Switcher are not installed in this isolated test."
+  },
+  {
+    "id": "R03",
+    "split": "regression",
+    "input": "Use Prompt Forge. I declined model routing; keep that answer. Draft the final prompt for local Python CSV validation: sku,quantity; output errors.csv with row,reason for duplicate SKUs and negative quantities; include CLI, tests and README. No network, no execution now. Synthetic host catalog (fixture, not real pricing): luna low/medium qualified for routine text and extraction, estimated relative cost 1; sol medium/high qualified for bounded code/tools, cost 3; terra medium qualified for visual documents, cost 3; astra high/xhigh qualified for difficult architecture/diagnosis and consequential review, cost 8. All support local files. Estimates exclude retry/transfer overhead. No paid API or native switching tool in this test. Task Checkpoint/Model Switcher are not installed in this isolated test."
+  },
+  {
+    "id": "R04",
+    "split": "regression",
+    "input": "Use Prompt Forge. Draft now: a prompt for a three-month local history research project, output a cited Markdown report and bibliography. Sources and exact topic are undecided. No browsing available now."
+  },
+  {
+    "id": "R05",
+    "split": "development",
+    "input": "Use Prompt Forge. Final prompt only for a local documentation-site redesign: navigation design, page migration, link checks, user guide. Routing accepted, but my explicit choice is sol medium for every task. Synthetic host catalog (fixture, not real pricing): luna low/medium qualified for routine text and extraction, estimated relative cost 1; sol medium/high qualified for bounded code/tools, cost 3; terra medium qualified for visual documents, cost 3; astra high/xhigh qualified for difficult architecture/diagnosis and consequential review, cost 8. All support local files. Estimates exclude retry/transfer overhead. No paid API or native switching tool in this test. Task Checkpoint/Model Switcher are not installed in this isolated test."
+  },
+  {
+    "id": "R06",
+    "split": "heldout",
+    "input": "Use Prompt Forge. I accepted routing. Produce a prompt for Agent Forge to make a manually invoked local invoice-reconciliation agent with CSV inputs invoice_id,total and a Markdown exceptions report. Require exact decimal arithmetic, duplicate handling, tests and operator guide. The receiving host and models are unknown; no catalog, selection tools, disk or companions are available here. No publication or paid services."
+  },
+  {
+    "id": "R07",
+    "split": "heldout",
+    "input": "Use Prompt Forge. My previous choice was to include cost-aware model routing for a Skill Forge handoff. Correction: remove routing. Final prompt: build a local-only skill that turns workshop notes into Markdown action lists, preserving unknown owners as empty, output columns task,owner,due_date. Delivery local skill folder, no publication."
+  },
+  {
+    "id": "R08",
+    "split": "heldout",
+    "input": "Use Prompt Forge. I have an active standing preference for automatic least-cost qualified model/effort routing for authorized builds. Write a prompt for Skill Forge to build a local skill package for diagnosing intermittent backup failures from redacted logs; final output diagnosis.md and evidence.csv. Include ingestion, difficult conflicting-evidence diagnosis, fixtures/regression tests and quick-start docs. No execution or publication now. Synthetic host catalog (fixture, not real pricing): luna low/medium qualified for routine text and extraction, estimated relative cost 1; sol medium/high qualified for bounded code/tools, cost 3; terra medium qualified for visual documents, cost 3; astra high/xhigh qualified for difficult architecture/diagnosis and consequential review, cost 8. All support local files. Estimates exclude retry/transfer overhead. No paid API or native switching tool in this test. Task Checkpoint/Model Switcher are not installed in this isolated test."
+  },
+  {
+    "id": "R09",
+    "split": "regression",
+    "input": "Use Prompt Forge. Draft now. Earlier I asked for PDF; latest correction is CSV only with exact headers task,owner,due_date and missing values empty. Prompt for converting meeting notes into that CSV, no external actions."
+  }
+]

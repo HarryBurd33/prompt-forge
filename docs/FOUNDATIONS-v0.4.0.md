@@ -1,0 +1,9 @@
+# Routing foundations for v0.4.0
+
+Inspected 2026-11-12 UTC. This focused upgrade uses original instructions and no new runtime dependency. The prior [prompt-refinement foundations](FOUNDATIONS-v0.3.0.md) remain applicable; broader community/model searches would not resolve this specific contract gap.
+
+- [Model Switcher v0.5.5](https://github.com/HarryBurd33/model-switcher/tree/469a4ed5ce93381295aa4754499be80bc10f9807): inspected the installed `SKILL.md`, `references/routing-policy.md` and MIT license. Conceptual reference for least-cost **qualified** model/effort assignments, completion cost including review and retries, bounded acceptance, current authorization and verified transitions. No routing code, host-specific procedures or price table is copied. Availability and model prices must be checked at execution time.
+- Task Checkpoint v0.8.3: inspected the installed `SKILL.md` and MIT license. Conceptual reference for milestone saves, matching task ownership, accurate next actions, verified handoffs and honest missing-state behavior. Its remote revision was not independently established for this upgrade; it remains an optional companion, not bundled source.
+- Prompt Forge v0.3.0 at [5d5284726f93a03425b5d409c5b31a78481ba24f](https://github.com/HarryBurd33/prompt-forge/tree/5d5284726f93a03425b5d409c5b31a78481ba24f): preserved as the comparison baseline, including its exact ZIP and installed-file manifest. Existing license notices remain unchanged.
+
+The constructor performed the bounded local foundation review and reused the prior host-capability assessment. No broad external search ran; no Hugging Face model/dataset or third-party dependency is needed for this instruction-only addition. Actual same-chat switching remains a host capability, not a fact established by the skill text or this behavioral comparison.

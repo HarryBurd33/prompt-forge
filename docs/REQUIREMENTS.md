@@ -2,9 +2,21 @@
 
 The [2026-11-08 capability audit](CAPABILITY-AUDIT-2026-11-08.md) adds actual fresh-receiver DOCX/XLSX/research coverage and a no-browsing control with unchanged v0.3.0 runtime. Historical rows retain their original scope and dates.
 
+## v0.4.0 routing upgrade — 2026-11-12
+
+| Requirement | Implementation | Observed evidence / boundary |
+| --- | --- | --- |
+| Ask once after refinement; reuse settled choice | Main skill, routing reference and private brief fields | R01/R03/R04/R07/R08; draft now, decline, correction and standing preference preserved. |
+| Full project plan inside the final prompt | All three outcome routes share the bounded routing contract | R02/R05/R06/R08; dependencies, scoped outputs, model plus effort, checks, review and escalation. |
+| Easy work cheaper; abstract work stronger | Least-cost qualified selection with overhead and cost uncertainty | R08 contrasts diagnosis and documentation; R05 honors explicit model choice. Synthetic costs only. |
+| Checkpoints throughout building | Milestones and model/effort/worker boundaries, reassessment, manual fallback | R02/R05/R06/R08 generated instructions; actual switching/continuation not established. |
+| Upgrade existing installation safely | Exact frozen v0.3 manifest and backup/rollback; preserved old archives | 25 deterministic checks and source review. Installed/source parity recorded in HANDOFF. |
+
+See [v0.4.0 validation](VALIDATION-v0.4.0.md) for limits and actual evidence. Historical rows retain their original scope.
+
 ## v0.3.0 upgrade — 2026-11-08
 
-Current evidence is in [v0.3.0 validation](VALIDATION-v0.3.0.md). Earlier rows below are preserved historical release claims.
+Historical evidence is in [v0.3.0 validation](VALIDATION-v0.3.0.md). Earlier rows below are preserved historical release claims.
 
 | Requirement | Implementation | Observed evidence / boundary |
 |---|---|---|

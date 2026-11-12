@@ -1,0 +1,14 @@
+{
+  "files": {
+    "cases.json": "04e3c668d8dee2d6234731b39f4dfa0efa12377e6ef8de57c939d6392ea26754",
+    "rubric.json": "5287e7b746eb505d9d2928527634f290c89f858f0f67f5ba48880da3bdb5d28d"
+  },
+  "baseline_commit": "5d5284726f93a03425b5d409c5b31a78481ba24f",
+  "settings": {
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "actual_serving_revision": "unknown",
+    "context": "fresh per arm, cases share executor context"
+  },
+  "budget": "Three candidates; initial 30-minute implementation/evaluation window; publication may follow passing gate"
+}

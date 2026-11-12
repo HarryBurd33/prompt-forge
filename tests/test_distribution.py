@@ -126,9 +126,18 @@ class DistributionTests(unittest.TestCase):
         alias.write_text(alias.read_text() + '\ndrift\n')
         self.assertIn('drift', self.command('package.py', '--check', success=False).stderr.lower())
 
+    def test_portable_resolves_nested_resource_links(self):
+        self.command('package.py')
+        for name in ('prompt-forge', 'adaptive-prompt-builder'):
+            text = (self.repo / 'portable' / (name + '.md')).read_text()
+            self.assertNotIn('](routing-and-companions.md', text)
+            self.assertIn('bounded build outline (included in this prompt)', text)
+            self.assertEqual(text.count('## Bounded cost-aware routing'), 1)
+
     def test_historical_archives_preserved_and_drift_refused(self):
         historical = [self.repo / 'dist/adaptive-prompt-builder-v0.1.0.zip',
-                      self.repo / 'dist/prompt-forge-v0.2.0.zip']
+                      self.repo / 'dist/prompt-forge-v0.2.0.zip',
+                      self.repo / 'dist/prompt-forge-v0.3.0.zip']
         before = {p: p.read_bytes() for p in historical}
         self.command('package.py')
         for path in historical:
@@ -137,7 +146,7 @@ class DistributionTests(unittest.TestCase):
         self.assertIn('frozen v0.2.0', self.command('package.py', '--check', success=False).stderr.lower())
 
     def test_zip_is_safe_complete_deterministic_and_versioned(self):
-        archive = self.repo / 'dist/prompt-forge-v0.3.0.zip'
+        archive = self.repo / 'dist/prompt-forge-v0.4.0.zip'
         original = archive.read_bytes()
         self.command('package.py')
         self.assertEqual(original, archive.read_bytes())
@@ -152,7 +161,7 @@ class DistributionTests(unittest.TestCase):
             digest, name = line.split('  ', 1)
             self.assertEqual(digest, hashlib.sha256((self.repo / 'dist' / name).read_bytes()).hexdigest())
         skill = self.repo / 'skills/prompt-forge/SKILL.md'
-        skill.write_text(skill.read_text().replace('0.3.0', '9.9.9'))
+        skill.write_text(skill.read_text().replace('0.4.0', '9.9.9'))
         self.assertIn('version', self.command('package.py', '--check', success=False).stderr.lower())
 
 

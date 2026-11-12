@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import io
+import posixpath
 import re
 import sys
 import zipfile
@@ -12,13 +13,15 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / 'skills' / 'prompt-forge'
 ALIAS = ROOT / 'skills' / 'adaptive-prompt-builder'
-VERSION = '0.3.0'
+VERSION = '0.4.0'
 ARCHIVE = ROOT / 'dist' / ('prompt-forge-v' + VERSION + '.zip')
 CHECKSUMS = ROOT / 'dist' / 'SHA256SUMS'
 LEGACY_ARCHIVE = ROOT / 'dist' / 'adaptive-prompt-builder-v0.1.0.zip'
 LEGACY_ARCHIVE_SHA256 = '2467a25967aca798aaa89c0581fe60951320131d9f046c752ac35460446ed043'
 V020_ARCHIVE = ROOT / 'dist/prompt-forge-v0.2.0.zip'
 V020_ARCHIVE_SHA256 = 'a6ff4d6a137b33292664c71b2e93093dfd20d42ce49018e871076502be6b25c3'
+V030_ARCHIVE = ROOT / 'dist/prompt-forge-v0.3.0.zip'
+V030_ARCHIVE_SHA256 = '362217c008ab0867e10068eed39c0b017ad337bb92e4bf05896a68a0ddd09de3'
 LINKS = re.compile(r'\[[^\]]*\]\(([^)]+)\)')
 ALIAS_NOTE = ('> Legacy alias: Adaptive Prompt Builder is now Prompt Forge. '
               'This standalone compatibility copy contains the same instructions; '
@@ -91,18 +94,20 @@ def portable_text(files):
     sections = []
     included = set()
 
-    def inline(match):
+    def inline(match, parent=PurePosixPath('.')):
         target = local_target(match.group(1))
         if target is None:
             return match.group(0)
-        target = str(PurePosixPath(target))
+        target = posixpath.normpath(str(parent / target))
         if target not in files:
             raise ValueError('Unsupported portable link: ' + target)
         if target not in included:
             included.add(target)
-            sections.append(files[target].decode('utf-8').strip())
+            body = files[target].decode('utf-8').strip()
+            body = LINKS.sub(lambda nested: inline(nested, PurePosixPath(target).parent), body)
+            sections.append(body)
         label = match.group(0).split('](', 1)[0][1:]
-        return label + ' (included below)'
+        return label + ' (included in this prompt)'
 
     text = LINKS.sub(inline, text)
     return ('<!-- Generated from the canonical skill by scripts/package.py. -->\n'
@@ -140,6 +145,8 @@ def expected_outputs():
         raise ValueError('Frozen v0.1.0 archive is missing or changed')
     if not V020_ARCHIVE.is_file() or hashlib.sha256(V020_ARCHIVE.read_bytes()).hexdigest() != V020_ARCHIVE_SHA256:
         raise ValueError('Frozen v0.2.0 archive is missing or changed')
+    if not V030_ARCHIVE.is_file() or hashlib.sha256(V030_ARCHIVE.read_bytes()).hexdigest() != V030_ARCHIVE_SHA256:
+        raise ValueError('Frozen v0.3.0 archive is missing or changed')
     outputs = {ALIAS / name: data for name, data in alias.items()}
     generated = {
         ROOT / 'portable/prompt-forge.md': portable_text(files).encode('utf-8'),

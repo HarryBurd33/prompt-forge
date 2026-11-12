@@ -29,6 +29,15 @@ ALIAS_V020 = {'LICENSE': '8e51a3d1476cb7497704932e1511fc78c46c12ee900a121907ec17
  'references/skill-forge-handoff.md': '933e13c91922d392a33c04f29a1ed030de18b0353215ee358b104a44908a2038',
  'templates/brief.md': '5aec6b992f94dced5920e766583553c4e612c26ba3fd26917ddb23533b9dfce8'}
 
+# Frozen v0.3.0 manifests, captured before the v0.4.0 routing upgrade.
+CANONICAL_V030 = {'LICENSE': '8e51a3d1476cb7497704932e1511fc78c46c12ee900a121907ec178321cf7d28', 'SKILL.md': '527239c38ea5ce0b88585aecdea462ee1f9971f0d3b9b279c50f62217901762a', 'references/artifact-contracts.md': '49bc2b8a352d75cb4cf4216d7d661b469bb8caf234142b7ee16304b66c311b76', 'references/routing-and-companions.md': '6e24a5f7dc41c263576ab9bf8cf05915888fb972f1421c0a5ab32f849bd22c9b', 'references/skill-forge-handoff.md': '933e13c91922d392a33c04f29a1ed030de18b0353215ee358b104a44908a2038', 'resources/recommendation-rule.md': 'e4b3c1256b7c367b378d9bb2049e435c9e7189c84081947779ce78501e5092d7', 'templates/brief.md': '93d77198b064eb881f60523a6d53a19c25d2649049a602f451e182db23090479'}
+ALIAS_V030 = {'LICENSE': '8e51a3d1476cb7497704932e1511fc78c46c12ee900a121907ec178321cf7d28', 'SKILL.md': '19a8ef13d5a5ab5f9c710610e994e2d17d76a2b86611f65a330d4288afe7f8a6', 'references/artifact-contracts.md': '49bc2b8a352d75cb4cf4216d7d661b469bb8caf234142b7ee16304b66c311b76', 'references/routing-and-companions.md': '6e24a5f7dc41c263576ab9bf8cf05915888fb972f1421c0a5ab32f849bd22c9b', 'references/skill-forge-handoff.md': '933e13c91922d392a33c04f29a1ed030de18b0353215ee358b104a44908a2038', 'resources/recommendation-rule.md': 'e4b3c1256b7c367b378d9bb2049e435c9e7189c84081947779ce78501e5092d7', 'templates/brief.md': '93d77198b064eb881f60523a6d53a19c25d2649049a602f451e182db23090479'}
+RECOGNIZED_CANONICAL = {'0.2.0': CANONICAL_V020, '0.3.0': CANONICAL_V030}
+
+
+def recognized_version(hashes):
+    return next((version for version, known in RECOGNIZED_CANONICAL.items() if hashes == known), None)
+
 def byte_hashes(files):
     return {name: hashlib.sha256(data).hexdigest() for name, data in files.items()}
 
@@ -70,13 +79,14 @@ def install(root, migrate=False, upgrade=False):
     legacy_present = present(legacy)
     previous = installed_hashes(canonical) if canonical_present else None
     needs_upgrade = canonical_present and previous != canonical_hashes
+    previous_version = recognized_version(previous)
     if needs_upgrade:
-        if previous != CANONICAL_V020:
+        if previous_version is None:
             refuse(canonical)
         if not upgrade:
-            raise ValueError('Recognized v0.2.0 installation: rerun with --upgrade for a verified backup and upgrade')
+            raise ValueError('Recognized v' + previous_version + ' installation: rerun with --upgrade for a verified backup and upgrade')
     if legacy_present:
-        if installed_hashes(legacy) not in (LEGACY_V010, ALIAS_V020, alias_hashes):
+        if installed_hashes(legacy) not in (LEGACY_V010, ALIAS_V020, ALIAS_V030, alias_hashes):
             refuse(legacy)
         if not migrate:
             raise ValueError('A recognized legacy installation exists. Run again with --migrate '
@@ -105,7 +115,7 @@ def install(root, migrate=False, upgrade=False):
             backups.mkdir(mode=0o700, exist_ok=True)
         try:
             if needs_upgrade:
-                upgrade_backup = next_backup(backups, 'prompt-forge-v0.2.0')
+                upgrade_backup = next_backup(backups, 'prompt-forge-v' + previous_version)
                 record = {'root': str(root), 'before': previous, 'after': canonical_hashes}
                 record_path = Path(str(upgrade_backup) + '.json')
                 with record_path.open('x') as stream:
@@ -151,13 +161,14 @@ def rollback(root, backup):
         raise ValueError('Rollback record must not be a symlink')
     record = json.loads(record_path.read_text())
     canonical = root / 'prompt-forge'
-    if record.get('root') != str(root) or record.get('before') != CANONICAL_V020:
+    previous_version = recognized_version(record.get('before'))
+    if record.get('root') != str(root) or previous_version is None:
         raise ValueError('Rollback backup ownership or version mismatch')
     if installed_hashes(backup) != record['before'] or installed_hashes(canonical) != record.get('after'):
         raise ValueError('Rollback refuses changed installation or backup; preserve and merge customizations')
     if present(root / 'adaptive-prompt-builder'):
         raise ValueError('Rollback refuses competing alias')
-    displaced = next_backup(backup.parent, 'prompt-forge-v0.3.0-rollback')
+    displaced = next_backup(backup.parent, 'prompt-forge-rollback')
     canonical.rename(displaced)
     try:
         backup.rename(canonical)
@@ -165,7 +176,7 @@ def rollback(root, backup):
         displaced.rename(canonical)
         raise
     record_path.unlink()
-    print('Restored v0.2.0: ' + str(canonical))
+    print('Restored v' + previous_version + ': ' + str(canonical))
     print('Displaced installation outside discovery: ' + str(displaced))
 
 
@@ -175,7 +186,7 @@ def main():
                         help='Skills discovery directory (default: ~/.agents/skills)')
     parser.add_argument('--migrate', action='store_true',
                         help='Back up a recognized unchanged legacy installation outside discovery')
-    parser.add_argument('--upgrade', action='store_true', help='Upgrade only exact recognized v0.2.0, with backup')
+    parser.add_argument('--upgrade', action='store_true', help='Upgrade only exact recognized v0.2.0/v0.3.0, with backup')
     parser.add_argument('--rollback', type=Path, help='Restore the exact owned upgrade backup; refuses later edits')
     args = parser.parse_args()
     if args.rollback:
